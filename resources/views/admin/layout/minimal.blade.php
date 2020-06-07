@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
     <link rel="shortcut icon" href="images/favicon.png">
-    <title>BucketAdmin</title>
+    <title>{{config('app.name')}}</title>
     <!--Core CSS -->
     <link href="{{asset('backend/bs3/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/js/jquery-ui/jquery-ui-1.10.1.custom.min.css')}}" rel="stylesheet">

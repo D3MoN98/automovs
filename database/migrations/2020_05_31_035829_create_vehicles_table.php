@@ -20,6 +20,7 @@ class CreateVehiclesTable extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('variant');
+            $table->text('description')->nullable();
             $table->string('registration_number');
             $table->string('type');
             $table->integer('driven');
