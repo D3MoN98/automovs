@@ -1,0 +1,12 @@
+.swal2-popup {
+    font-size: 1.6rem !important;
+}
+.btn-sm {
+    padding: 3px 8px;
+}
+.edit-form {
+    display: inline;
+}
+textarea{
+    resize: vertical !important;
+}
