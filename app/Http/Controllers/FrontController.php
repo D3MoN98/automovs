@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserRegistered;
 
 class FrontController extends Controller
 {
@@ -85,6 +87,9 @@ class FrontController extends Controller
     public function home(){
         $vehicles = Vehicle::all();
         $service_types = ServiceType::all();
+
+        Mail::to('sjgalaxy98@gmail.com')->send(new UserRegistered('It works!'));
+
         return view('frontend.home')->with([
             'vehicles' => $vehicles,
             'service_types' => $service_types,

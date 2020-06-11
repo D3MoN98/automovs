@@ -22,12 +22,12 @@ class UserSeeder extends Seeder
         // ])->id;
 
         Role::create([
-            'name' => 'admin',
+            'name' => 'customer',
         ]);
 
-        UserRole::create([
-            'user_id' => 1,
-            'role_id' => 1,
-        ]);
+        // UserRole::create([
+        //     'user_id' => 1,
+        //     'role_id' => 1,
+        // ]);
     }
 }
