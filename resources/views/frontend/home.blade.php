@@ -7,7 +7,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="card-slider wow fadeInRight" data-wow-delay="0.4s">
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('storage/storage/uploads/banner-02.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
                         <div class="card-img-overlay">
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('storage/storage/uploads/banner-01.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('frontend/images/banner-01.jpg')}}" alt="">
                         <div class="card-img-overlay">
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>

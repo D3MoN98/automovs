@@ -6,6 +6,27 @@ $color-four: #e84a5f;
 
 $thetransition: all .5s cubic-bezier(1,.25,0,.75) 0s;
 
+
+// animations
+
+@-webkit-keyframes scale {
+	50% {
+		-webkit-transform: scale(1.15);
+		-ms-transform: scale(1.15);
+		transform: scale(1.15);
+	}
+}
+
+@keyframes scale {
+	50% {
+		-webkit-transform: scale(1.15);
+		-ms-transform: scale(1.15);
+		transform: scale(1.15);
+	}
+}
+
+// animations
+
 *{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -106,9 +127,11 @@ a.link{
     letter-spacing: 1px;
 }
 
+
 .slick-track{
     margin: 0;
 }
+
 
 .header{
     .navbar{
@@ -162,6 +185,7 @@ a.link{
                 object-fit: cover;
                 object-position: center;
                 height: 100%;
+                animation: scale 20s linear infinite;
             }
         }
     }

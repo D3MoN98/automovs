@@ -1,3 +1,15 @@
+@-webkit-keyframes scale {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
 * {
   font-family: "Ubuntu", sans-serif;
 }
@@ -155,6 +167,8 @@ a.link {
   -o-object-position: center;
      object-position: center;
   height: 100%;
+  -webkit-animation: scale 20s linear infinite;
+          animation: scale 20s linear infinite;
 }
 
 .home-banner .jumbotron {
