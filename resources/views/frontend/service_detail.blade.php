@@ -1,20 +1,19 @@
 @extends('frontend.layout.front')
 
-@push('styles')
-    <style>
-        .card-img-top.single-img{
-            object-fit: contain;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-@endpush
-
 @section('content')
 
     <section class="single-details-section">
         <div class="container">
-            <div class="row mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="breadcrumb">
+                        <a class="breadcrumb-item link" href="{{url('/')}}">Home</a>
+                        <a class="breadcrumb-item link" href="#">Service</a>
+                        <span class="breadcrumb-item active">{{$service->name}}</span>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6 single-img-otr wow fadeInLeft" data-wow-delay="0.5s">
                     @php
                         $images = explode(',', $service->images);
@@ -23,7 +22,9 @@
                     <div class="slider-img">
                         @foreach ($images as $image)
                         <div class="card shadow-sm">
-                            <img class="card-img-top single-img" src="{{asset('storage/'.$image)}}" alt="">
+                            <a href="{{asset('storage/'.$image)}}" data-fancybox="gallery" href="big_1.jpg">
+                                <img class="card-img-top single-img" src="{{asset('storage/'.$image)}}" alt="">
+                            </a>
                         </div>
                         @endforeach
                     </div>
@@ -46,7 +47,7 @@
                     <div class="attribute-otr mt-4 wow fadeInRight" data-wow-delay="0.7s">
                         <ul class="attribute-list">
                             @foreach ($prices as $price)
-                            <li><span>{{$price->price_type}}</span> <i class="far fa-rupee-sign"></i>{{$price->price}}</li>
+                            <li><span>{{$price->price_type}}</span> <span><i class="far fa-rupee-sign"></i>{{$price->price}}</span></li>
                             @endforeach
                         </ul>
                     </div>

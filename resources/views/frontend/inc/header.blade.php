@@ -1,5 +1,5 @@
 <section class="header bg-default">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <header>
@@ -9,7 +9,8 @@
                         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                             data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="farse"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            {{-- <span class="navbar-toggler-icon"></span> --}}
+                            <i class="far fa-bars" aria-hidden="true"></i>
                         </button>
                         <div class="collapse navbar-collapse ml-auto" id="collapsibleNavId">
                             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

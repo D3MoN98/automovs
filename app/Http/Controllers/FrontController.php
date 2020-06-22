@@ -88,8 +88,6 @@ class FrontController extends Controller
         $vehicles = Vehicle::all();
         $service_types = ServiceType::all();
 
-        Mail::to('sjgalaxy98@gmail.com')->send(new UserRegistered('It works!'));
-
         return view('frontend.home')->with([
             'vehicles' => $vehicles,
             'service_types' => $service_types,

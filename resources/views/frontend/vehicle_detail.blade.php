@@ -1,20 +1,19 @@
 @extends('frontend.layout.front')
 
-@push('styles')
-    <style>
-        .card-img-top.single-img{
-            object-fit: contain;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-@endpush
-
 @section('content')
 
     <section class="single-details-section">
         <div class="container">
-            <div class="row mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="breadcrumb">
+                        <a class="breadcrumb-item link" href="{{url('/')}}">Home</a>
+                        <a class="breadcrumb-item link" href="#">Car</a>
+                        <span class="breadcrumb-item active">{{$vehicle->brand}} - {{$vehicle->model}}</span>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6 single-img-otr wow fadeInLeft" data-wow-delay="0.5s">
                     @php
                         $images = explode(',', $vehicle->images);
@@ -23,7 +22,9 @@
                     <div class="slider-img">
                         @foreach ($images as $image)
                         <div class="card shadow-sm">
-                            <img class="card-img-top single-img" src="{{asset('storage/'.$image)}}" alt="">
+                            <a href="{{asset('storage/'.$image)}}" data-fancybox="gallery" href="big_1.jpg">
+                                <img class="card-img-top single-img" src="{{asset('storage/'.$image)}}" alt="">
+                            </a>
                         </div>
                         @endforeach
                     </div>
@@ -41,23 +42,21 @@
                     <div class="price-otr mt-3 wow fadeInRight" data-wow-delay="0.6s"><i class="far fa-rupee-sign"></i> {{$vehicle->price}}</div>
                     <div class="attribute-otr mt-4 wow fadeInRight" data-wow-delay="0.7s">
                         <ul class="attribute-list">
-                            <li><span>Band</span> {{$vehicle->brand}}</li>
-                            <li><span>Model</span> {{$vehicle->model}}</li>
-                            <li><span>Variant</span> {{$vehicle->variant}}</li>
-                            <li><span>Body Colour</span> {{$vehicle->color}}</li>
-                            <li><span>Reg num</span> {{$vehicle->registration_number}}</li>
-                        </ul>
-                        <ul class="attribute-list">
-                            <li><span>Kms Driven</span> {{$vehicle->driven}}</li>
-                            <li><span>Year bought</span> {{$vehicle->year_bought}}</li>
-                            <li><span>Insurance till</span> {{$vehicle->insurance}}</li>
-                            <li><span>Location</span> {{$vehicle->city->city_name}}</li>
+                            <li><span>Band</span> <span>{{$vehicle->brand}}</span></li>
+                            <li><span>Model</span> <span>{{$vehicle->model}}</span></li>
+                            <li><span>Variant</span> <span>{{$vehicle->variant}}</span></li>
+                            <li><span>Body Colour</span> <span>{{$vehicle->color}}</span></li>
+                            <li><span>Reg num</span> <span>{{$vehicle->registration_number}}</span></li>
+                            <li><span>Kms Driven</span> <span>{{$vehicle->driven}}</span></li>
+                            <li><span>Year bought</span> <span>{{$vehicle->year_bought}}</span></li>
+                            <li><span>Insurance till</span> <span>{{$vehicle->insurance}}</span></li>
+                            <li><span>Location</span> <span>{{$vehicle->city->city_name}}</span></li>
                         </ul>
                     </div>
-                    <div class="ettra-info mb-5 wow fadeInRight" data-wow-delay="0.8s">
+                    <div class="ettra-info wow fadeInRight" data-wow-delay="0.8s">
                         <p>{{$vehicle->description}}</p>
                     </div>
-                    <div class="action-otr my-2 wow fadeInRight"  data-wow-delay="1s">
+                    <div class="action-otr wow fadeInRight"  data-wow-delay="1s">
                         @auth
                             @if (!Auth::user()->hasVehicle($vehicle->id))
                                 @if(Auth::user()->hasVehiclePurchased($vehicle->id))
@@ -85,7 +84,7 @@
     </section>
 
 
-    <section class="car-list mt-5">
+    <section class="car-list">
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-12">
@@ -134,6 +133,7 @@
             slidesToScroll: 1,
             arrows: false,
             fade: true,
+            centerMode: false,
             asNavFor: '.slider-img-nav'
         });
         $('.slider-img-nav').slick({
@@ -142,14 +142,47 @@
             asNavFor: '.slider-img',
             dots: false,
             arrows: false,
+            centerMode: false,
             focusOnSelect: true
         });
         $('.related-list-otr').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             dots: false,
-            arrows: false,
-            focusOnSelect: true
+            arrows: true,
+            centerMode: false,
+            focusOnSelect: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1008,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+        $(window).resize(function () {
+            $('.related-list-otr').not('.slick-initialized').slick('resize');
+        });
+
+        $(window).on('orientationchange', function () {
+            $('.related-list-otr').not('.slick-initialized').slick('resize');
         });
     </script>
 @endpush

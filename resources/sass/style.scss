@@ -10,11 +10,11 @@ $thetransition: all .5s cubic-bezier(1,.25,0,.75) 0s;
     font-family: 'Ubuntu', sans-serif;
 }
 
-textarea:hover, 
-input:hover, 
-textarea:active, 
-input:active, 
-textarea:focus, 
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
 input:focus,
 button:focus,
 button:active,
@@ -37,6 +37,8 @@ label:focus,
     border: 1px solid $color-two;
     color: $color-two;
     outline: none;
+    font-weight: 600;
+    letter-spacing: 1px;
     &:hover,&:active,&:focus{
         background-color: $color-two !important;
         color: $color-one;
@@ -69,7 +71,7 @@ a.link{
 // ::-webkit-input-placeholder { /* Edge */
 //     color: $color-one !important;
 //   }
-  
+
 // :-ms-input-placeholder { /* Internet Explorer 10-11 */
 //     color: $color-one !important;
 // }
@@ -93,7 +95,7 @@ a.link{
     color: $color-two !important;
 
   }
-  
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: $color-two !important;
 
@@ -104,6 +106,9 @@ a.link{
     letter-spacing: 1px;
 }
 
+.slick-track{
+    margin: 0;
+}
 
 .header{
     .navbar{
@@ -111,7 +116,7 @@ a.link{
         padding-right: 0;
     }
     .navbar-nav{
-        flex: 0 1 30%;
+        flex: 0 1 25%;
         display: flex;
         justify-content: space-between;
         a.nav-link{
@@ -127,39 +132,49 @@ a.link{
         color: $color-two;
         padding-left: 0;
         padding-right: 0;
+        background-color: transparent;
+        .btn{
+            border: 1px solid $color-one;
+            color: $color-one;
+            &:hover,&:active,&:focus{
+                background-color: $color-two !important;
+                color: $color-one;
+                border: 1px solid $color-two;
+            }
+        }
     }
+
     .reg-form-otr{
         display: flex;
         justify-content: flex-end;
     }
-    .reg-form{
-        flex: 0 1 75%;
-        padding: 30px;
-        height: fit-content;
-        // background: $color-three;
-        background: #ffffffb5;
-        /* opacity: 0.5; */
-        border-radius: 10px;
-        margin-top: 60px;
-        h2.form-heading{
-            text-align: center;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            color: $color-two;
-        }
-        p.form-sub-heading{
-            text-align: center;
-            color: $color-two;
-            margin-bottom: 15px;
-        }
-        input{
-            text-align: center;
+    .card-slider{
+        padding: 25px 0;
+        padding-bottom: 0;
+
+        .card{
+            overflow: hidden;
+            height: 500px;
+            border: none;
+            border-radius: none;
+            background-color: transparent;
+            img.card-img-top{
+                object-fit: cover;
+                object-position: center;
+                height: 100%;
+            }
         }
     }
 }
 
+.home-banner{
+    .jumbotron{
+        color: $color-one;
+    }
+}
 
 .car-list{
+    margin-top: 3rem;
     .tab-otr{
         display: flex;
         justify-content: center;
@@ -178,7 +193,7 @@ a.link{
                     padding: 10px;
                     position: relative;
 
-                 
+
 
                     &:before {
                         content: "";
@@ -212,12 +227,11 @@ a.link{
         }
         .dropdown-menu{
             border: 0;
-            width: 100%;
             text-align: center;
         }
     }
     .card-deck{
-        margin: 50px 0;
+        margin-top: 20px;
     }
     .card{
         border: none;
@@ -284,6 +298,7 @@ a.link{
 
     }
 }
+
 footer{
     margin-top: 120px;
     padding: 20px;
@@ -335,6 +350,19 @@ footer{
 }
 
 .single-details-section{
+    .breadcrumb{
+        background: transparent;
+        margin-top: 1rem;
+        .breadcrumb-item{
+            &.active{
+                color: #6b6b6b;
+            }
+        }
+    }
+    .breadcrumb-item+.breadcrumb-item::before{
+        color: $color-two;
+    }
+
     .single-img-otr{
         .card{
             height: 350px;
@@ -344,12 +372,15 @@ footer{
         }
         .single-img{
             margin: auto;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
         }
     }
     .slider-img-nav{
-        margin-top: 20px;
+        margin-top: 10px;
         .card{
-            height: fit-content;
+            height: 125px;
             padding: 10px;
         }
         .slick-slide {
@@ -372,11 +403,14 @@ footer{
         display: flex;
         justify-content: space-between;
         .attribute-list{
-            flex: 0 0 50%;
+            flex: 1 1 100%;
             list-style: none;
             padding: 0;
+            column-count: 2;
             li{
                 margin-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
             }
             li span{
                 font-weight: 600;
@@ -384,12 +418,18 @@ footer{
                 margin-right: 20px;
                 color: #6b6b6b;
             }
+            li span:nth-child(2){
+                font-weight: 400;
+            }
         }
     }
     .action-otr{
+        margin-top: 2rem;
         display: flex;
+        justify-content: flex-start;
         .btn{
-            flex: 0 0 25%;
+            flex: 0 0 auto;
+            margin-right: 20px;
         }
     }
 }

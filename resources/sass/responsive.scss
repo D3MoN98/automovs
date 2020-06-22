@@ -1,0 +1,125 @@
+$color-one: #fff5da;
+// $color-two: #45171d;
+$color-two: #5c2626;
+$color-three: #ff847c;
+$color-four: #e84a5f;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header{
+        .navbar-toggler .fa-bars{
+            color: $color-two;
+        }
+        li.nav-item{
+            text-align: center;
+        }
+    }
+    .banner{
+        .jumbotron{
+            margin: 0;
+        }
+        .card-slider{
+            .card{
+                height: 200px;
+                h1{
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 1.2;
+                }
+                .lead{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .car-list{
+        margin-top: 1rem;
+        .tab-otr{
+            ul{
+                flex: 0 0 100%;
+                li{
+                    a{
+                        font-size: 14px;
+                        padding: 5px;
+                    }
+                }
+            }
+            .dropdown-menu.shadow-sm{
+                left: -25%;
+            }
+        }
+        .card{
+            .card-img-otr{
+                margin: 0.5rem 0.5rem 0 0.5rem;
+                height: 175px;
+
+            }
+            .card-body{
+                padding: 0.5rem;
+            }
+        }
+    }
+    .card-columns{
+        margin-top: 10px;
+        padding: 0 25px;
+    }
+    footer{
+        margin-top: 15px;
+        padding: 15px;
+        ul.nav{
+            font-size: 12px;
+            .nav-link{
+                padding: 0px 10px;
+            }
+        }
+    }
+
+    .single-details-section{
+        .breadcrumb{
+            .breadcrumb-item{
+                font-size: 14px;
+            }
+        }
+        .attribute-otr{
+            .attribute-list{
+                column-count: 1;
+            }
+        }
+        .action-otr{
+            margin-top: 1rem;
+            justify-content: flex-start;
+            .btn{
+                margin-right: 10px;
+                width: 33%;
+            }
+        }
+        .single-img-otr .card{
+            height: 250px;
+            padding: 10px;
+        }
+        .slider-img-nav .card{
+            height: fit-content;
+            padding: 5px;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

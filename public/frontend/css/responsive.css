@@ -1,0 +1,113 @@
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  header .navbar-toggler .fa-bars {
+    color: #5c2626;
+  }
+
+  header li.nav-item {
+    text-align: center;
+  }
+
+  .banner .jumbotron {
+    margin: 0;
+  }
+
+  .banner .card-slider .card {
+    height: 200px;
+  }
+
+  .banner .card-slider .card h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  .banner .card-slider .card .lead {
+    font-size: 1rem;
+  }
+
+  .car-list {
+    margin-top: 1rem;
+  }
+
+  .car-list .tab-otr ul {
+    flex: 0 0 100%;
+  }
+
+  .car-list .tab-otr ul li a {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .car-list .tab-otr .dropdown-menu.shadow-sm {
+    left: -25%;
+  }
+
+  .car-list .card .card-img-otr {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    height: 175px;
+  }
+
+  .car-list .card .card-body {
+    padding: 0.5rem;
+  }
+
+  .card-columns {
+    margin-top: 10px;
+    padding: 0 25px;
+  }
+
+  footer {
+    margin-top: 15px;
+    padding: 15px;
+  }
+
+  footer ul.nav {
+    font-size: 12px;
+  }
+
+  footer ul.nav .nav-link {
+    padding: 0px 10px;
+  }
+
+  .single-details-section .breadcrumb .breadcrumb-item {
+    font-size: 14px;
+  }
+
+  .single-details-section .attribute-otr .attribute-list {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+
+  .single-details-section .action-otr {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  .single-details-section .action-otr .btn {
+    margin-right: 10px;
+    width: 33%;
+  }
+
+  .single-details-section .single-img-otr .card {
+    height: 250px;
+    padding: 10px;
+  }
+
+  .single-details-section .slider-img-nav .card {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 5px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
