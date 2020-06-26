@@ -71,3 +71,7 @@ Route::get('/clear', function() {
     $exitCode = Artisan::call('view:clear');
     return 'cache cleared';
 });
+
+
+//Tester
+Route::get('/send-sms', 'TestController@send_sms')->name('send-sms');
