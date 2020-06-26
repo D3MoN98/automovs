@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Payment;
 use App\Service;
 use App\ServiceBook;
@@ -43,6 +44,8 @@ class PaymentController extends Controller
      */
     public function store(Request $request, $for, $type, $id)
     {
+        $this->send_sms_vehicle_booking($id);
+        die;
         $api = new Instamojo(
             config('services.instamojo.api_key'),
             config('services.instamojo.auth_token'),
@@ -117,20 +120,25 @@ class PaymentController extends Controller
             'status' => $response['status'],
         );
 
-        // $result = Msg91::sms('916291839827', 'Hello there!');
-        // dd($result);
-        // $msg_link = 'http://api.msg91.com/api/sendhttp.php?route=4&sender=AUTMOV&mobiles='+phn+'&authkey=276339A6u0r8gEhQ5cd8e766&message='+msg+'&country=91';
-
         $payment_id = Payment::create($payment)->id;
 
         if($for == 'vehicle' && $type == 'booking'){
-            $this->vehicle_booking($payment_id, $id);
+
+            $this->vehicle_booking($id);
+            $this->send_sms_vehicle_booking($id);
+
             return redirect($for.'/'.$id)->withSuccess('Car booked successfully');
         } else if($for == 'vehicle' && $type == 'purchase'){
+
             $this->vehicle_purchase($payment_id, $id);
+            $this->send_sms_vehicle_purchase($id);
+
             return redirect($for.'/'.$id)->withSuccess('Car purchased successfully');
         } else if($for == 'service' && $type == 'booking'){
+
             $this->service_booking($payment_id, $id);
+            $this->send_sms_serice_booking($id);
+
             return redirect($for.'/'.$id)->withSuccess('Sevice booked successfully');
         }
 
@@ -162,6 +170,115 @@ class PaymentController extends Controller
             'service_id' => $id,
             'payment_id' => $payment_id,
         ]);
+    }
+
+
+    public function send_sms_vehicle_booking($id)
+    {
+        try {
+            $user = Auth::user();
+            $vehicle = Vehicle::find($id);
+
+            $variables = [
+                'contact_no' => $user->contact_no,
+                'name' => $user->name,
+                'email' => $user->email,
+                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'buyer_contact_no' => $vehicle->user->contact_no,
+                'vehicle_name' => $vehicle->brand . ' - ' . $vehicle->model,
+                'vehicle_url' => route('vehicle.show', ['id' => $id])
+            ];
+
+            /**
+             * For user
+             */
+            $result = Msg91::sms($user->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            /**
+             * For seller
+             */
+            $result = Msg91::sms($vehicle->user->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            /**
+             * For admin
+             */
+            $result = Msg91::sms(User::find(1)->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+
+    public function send_sms_vehicle_purchase($id)
+    {
+        try {
+            $user = Auth::user();
+            $vehicle = Vehicle::find($id);
+
+            $variables = [
+                'contact_no' => $user->contact_no,
+                'name' => $user->name,
+                'email' => $user->email,
+                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'buyer_contact_no' => $vehicle->user->contact_no,
+                'vehicle_name' => $vehicle->brand . ' - ' . $vehicle->model,
+                'vehicle_url' => route('vehicle.show', ['id' => $id])
+            ];
+
+            /**
+             * For user
+             */
+            $result = Msg91::sms($user->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            /**
+             * For seller
+             */
+            $result = Msg91::sms($vehicle->user->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            /**
+             * For admin
+             */
+            $result = Msg91::sms(User::find(1)->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+
+    public function send_sms_service_booking($id)
+    {
+        try {
+            $user = Auth::user();
+            $service = Service::find($id);
+
+            $variables = [
+                'contact_no' => $user->contact_no,
+                'name' => $user->name,
+                'email' => $user->email,
+                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'service_name' => $service->name,
+                'service_url' => route('service.show', ['id' => $id])
+            ];
+
+
+            /**
+             * For user
+             */
+            $result = Msg91::sms($user->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            /**
+             * For admin
+             */
+            $result = Msg91::sms(User::find(1)->contact_no, '5ef22ae0d6fc050d32185fa2', $variables, 'AUTOMV');
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
 }
