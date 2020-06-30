@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -86,8 +87,40 @@ class User extends Authenticatable
         return false;
     }
 
+    public function lastVehicleBooked($id)
+    {
+        if($this->vehicleBooks()->where('vehicle_id', $id)->first())
+            return $this->vehicleBooks()->where('vehicle_id', $id)->orderBy('created_at')->first();
+        return false;
+    }
+
+    public function lastVehicleBookedExpiredAt($id)
+    {
+        $last_vehicle_booked = $this->lastVehicleBooked($id);
+        if($last_vehicle_booked){
+            $created = new Carbon($last_vehicle_booked->created_at->addDays(15));
+            $now = Carbon::now();
+            // return $created->toDateTimeString();
+            return $now->diffInDays($created, false);
+        }
+        return false;
+    }
+
+    public function isLastVehicleBookedExpired($id){
+
+        if(!$this->hasVehicleBooked($id))
+            return false;
+
+        $days = $this->lastVehicleBookedExpiredAt($id);
+
+        if($days < 0)
+            return false;
+        return true;
+    }
+
+
     public function vehiclePurchases(){
-        return $this->hasMany('App\VehicleBook');
+        return $this->hasMany('App\VehiclePurchase');
     }
 
     public function hasVehiclePurchased($id)

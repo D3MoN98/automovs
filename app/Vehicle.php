@@ -37,6 +37,12 @@ class Vehicle extends Model
         return $this->belongsTo('App\City', 'location');
     }
 
+
+    public function books()
+    {
+        return $this->hasMany('App\VehicleBook');
+    }
+
     public function purchase()
     {
         return $this->hasOne('App\VehiclePurchase');
