@@ -251,7 +251,7 @@ a.link {
   overflow: hidden;
   margin: 20px 20px 0 20px;
   height: 200px;
-  border: 1px solid #cccccc;
+  border: none;
 }
 
 .car-list .card .card-img-otr img {
