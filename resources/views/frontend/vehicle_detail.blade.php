@@ -43,10 +43,12 @@
                 <div class="price-otr mt-3 wow fadeInRight" data-wow-delay="0.6s"><i class="far fa-rupee-sign"></i>
                     {{$vehicle->price}}</div>
 
+                @auth
                 @if (Auth::user()->isLastVehicleBookedExpired($vehicle->id))
                 <div class="price-otr my-1 wow fadeInRight" data-wow-delay="0.6s">
                     {{Auth::user()->lastVehicleBookedExpiredAt($vehicle->id)}} days left</div>
                 @endif
+                @endauth
 
                 <div class="attribute-otr mt-4 wow fadeInRight" data-wow-delay="0.7s">
                     <ul class="attribute-list">
