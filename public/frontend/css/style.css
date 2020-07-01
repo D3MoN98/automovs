@@ -240,6 +240,8 @@ a.link {
   border: none;
   border-radius: 10px;
   background-color: #ffffffb5;
+  position: relative;
+  overflow: hidden;
 }
 
 .car-list .card:hover img {
@@ -375,6 +377,8 @@ footer .nav .nav-link {
   border-radius: 10px;
   padding: 20px;
   border: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .single-details-section .single-img-otr .single-img {
@@ -464,5 +468,47 @@ footer .nav .nav-link {
 
 .related-list-otr .slick-list {
   margin: 0 -5px;
+}
+
+.cr {
+  width: 200px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #f0f0f0;
+  background-color: #f5675a;
+  z-index: 100000000;
+}
+
+/* Positions */
+
+.cr-top {
+  top: 25px;
+}
+
+.cr-bottom {
+  bottom: 25px;
+}
+
+.cr-left {
+  left: -50px;
+}
+
+.cr-right {
+  right: -50px;
+}
+
+/* Rotations */
+
+.cr-top.cr-left,
+.cr-bottom.cr-right {
+  transform: rotate(-45deg);
+}
+
+.cr-top.cr-right,
+.cr-bottom.cr-left {
+  transform: rotate(45deg);
 }
 

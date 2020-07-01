@@ -1,5 +1,8 @@
 @foreach ($vehicles as $vehicle)
 <div class="card shadow-sm wow fadeInLeft" data-wow-delay="0.2s">
+    @if ($vehicle->isPuchased())
+    <div class="cr cr-top cr-left">Sold Out</div>
+    @endif
     <a href="{{route('vehicle.show', $vehicle->id)}}">
         <div class="card-img-otr">
             @php
