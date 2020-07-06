@@ -59,14 +59,14 @@ class BlogController extends Controller
         $blog['images'] = implode(',', $blog_files);
         $blog['user_id'] = Auth::id();
 
-        Blog::create($blog);
+        $blog_id = Blog::create($blog)->id;
 
-        return redirect()->back()->withSuccess('Blog Added');
+        return redirect()->route('admin.blog.edit', $blog_id)->withSuccess('Blog Added');
     }
 
     /**
      * Display the specified resource.
-     *
+     *blog_id
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

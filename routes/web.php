@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontController@home')->name('home');
+Route::get('blogs', 'FrontController@blogs')->name('blogs');
+Route::get('blog/{id}', 'FrontController@blog_detail')->where('id', '[0-9]+')->name('blog.show');
 Route::get('vehicle/{id}', 'FrontController@vehicle_detail')->where('id', '[0-9]+')->name('vehicle.show');
 Route::get('vehicles/sort_by/{type}', 'FrontController@vehicles_sort_by')->name('vehicles.sort_by');
 Route::get('services/sort_by_service_type/{id}', 'FrontController@services_sort_by_service_type')->name('services.sort_by_service_type');

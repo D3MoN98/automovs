@@ -43,8 +43,16 @@
                         <div class="form-group">
                             <label for="title" class="col-lg-2 col-sm-2 control-label">Title</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="title" minlength="2" name="blog[title]"
+                                <input type="text" class="form-control" id="title" name="blog[title]"
                                     placeholder="Title" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="excerpt" class="col-lg-2 col-sm-2 control-label">Excerpt</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="excerpt" name="blog[excerpt]"
+                                    placeholder="Excerpt" required>
                             </div>
                         </div>
 
@@ -197,5 +205,15 @@
         });
     });
 </script>
-
+<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#content' ) )
+    .then( editor => {
+            console.log( editor );
+    } )
+    .catch( error => {
+            console.error( error );
+    } );
+</script>
 @endpush

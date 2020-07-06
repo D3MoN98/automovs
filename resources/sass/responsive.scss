@@ -124,6 +124,27 @@ $color-four: #e84a5f;
             padding: 5px;
         }
     }
+
+    .blog-detail-banner {
+        .jumbotron {
+            .display-4 {
+                font-size: 2rem !important;
+            }
+
+            padding-bottom: 1rem;
+
+            .lead {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .blog-content {
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

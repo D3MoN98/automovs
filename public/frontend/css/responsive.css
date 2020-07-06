@@ -103,6 +103,23 @@
     height: fit-content;
     padding: 5px;
   }
+
+  .blog-detail-banner .jumbotron {
+    padding-bottom: 1rem;
+  }
+
+  .blog-detail-banner .jumbotron .display-4 {
+    font-size: 2rem !important;
+  }
+
+  .blog-detail-banner .jumbotron .lead {
+    font-size: 1rem;
+  }
+
+  .blog-content p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

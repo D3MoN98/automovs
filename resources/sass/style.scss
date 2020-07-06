@@ -86,6 +86,14 @@ a.link {
     color: $color-two;
 }
 
+.badge-primary {
+    background-color: $color-three;
+}
+
+.text-primary {
+    color: $color-three !important;
+}
+
 // .form-control{
 //     background: transparent;
 //     border: 1px solid $color-one;
@@ -151,9 +159,13 @@ a.link {
     }
 
     .navbar-nav {
-        flex: 0 1 25%;
+        flex: 0 1 auto;
         display: flex;
         justify-content: space-between;
+
+        li.nav-item {
+            margin-right: 10px;
+        }
 
         a.nav-link {
             color: $color-two;
@@ -384,6 +396,8 @@ footer {
 }
 
 .pagination {
+    justify-content: center;
+
     .page-link {
         border: 1px solid $color-two;
         background-color: transparent;
@@ -414,6 +428,13 @@ footer {
         color: white;
         background-color: $color-two;
         border-color: $color-two;
+    }
+
+    .page-item.disabled {
+        .page-link {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
     }
 }
 
@@ -546,19 +567,92 @@ footer {
 
 /* Positions */
 
-.cr-top    { top: 25px; }
-.cr-bottom { bottom: 25px; }
-.cr-left   { left: -50px; }
-.cr-right  { right: -50px; }
+.cr-top {
+    top: 25px;
+}
+
+.cr-bottom {
+    bottom: 25px;
+}
+
+.cr-left {
+    left: -50px;
+}
+
+.cr-right {
+    right: -50px;
+}
 
 /* Rotations */
 
 .cr-top.cr-left,
 .cr-bottom.cr-right {
-  transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .cr-top.cr-right,
 .cr-bottom.cr-left {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.blog-list {
+    p.no-blog {
+        font-size: 1.25rem;
+        font-weight: 300;
+        text-align: center;
+        color: $color-two;
+    }
+
+    .card {
+        .card-title {
+            color: $color-two;
+        }
+
+        .card-img-otr {
+            overflow: hidden;
+        }
+
+        img {
+            transition: transform 1s;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.blog-detail-banner {
+    .jumbotron {
+        padding-bottom: 2rem;
+    }
+}
+
+.blog-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: $color-two;
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        word-wrap: break-word !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: 1px;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+
 }

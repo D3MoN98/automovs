@@ -69,6 +69,14 @@ a.link {
   color: #5c2626;
 }
 
+.badge-primary {
+  background-color: #ff847c;
+}
+
+.text-primary {
+  color: #ff847c !important;
+}
+
 .form-control {
   background: transparent;
   border: 1px solid #5c2626;
@@ -112,9 +120,13 @@ a.link {
 }
 
 .header .navbar-nav {
-  flex: 0 1 25%;
+  flex: 0 1 auto;
   display: flex;
   justify-content: space-between;
+}
+
+.header .navbar-nav li.nav-item {
+  margin-right: 10px;
 }
 
 .header .navbar-nav a.nav-link {
@@ -327,6 +339,10 @@ footer .nav .nav-link {
   padding: 0px 15px;
 }
 
+.pagination {
+  justify-content: center;
+}
+
 .pagination .page-link {
   border: 1px solid #5c2626;
   background-color: transparent;
@@ -357,6 +373,11 @@ footer .nav .nav-link {
   color: white;
   background-color: #5c2626;
   border-color: #5c2626;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  border-color: #6c757d;
 }
 
 .single-details-section .breadcrumb {
@@ -510,5 +531,57 @@ footer .nav .nav-link {
 .cr-top.cr-right,
 .cr-bottom.cr-left {
   transform: rotate(45deg);
+}
+
+.blog-list p.no-blog {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+  color: #5c2626;
+}
+
+.blog-list .card .card-title {
+  color: #5c2626;
+}
+
+.blog-list .card .card-img-otr {
+  overflow: hidden;
+}
+
+.blog-list .card img {
+  transition: transform 1s;
+}
+
+.blog-list .card:hover img {
+  transform: scale(1.1);
+}
+
+.blog-detail-banner .jumbotron {
+  padding-bottom: 2rem;
+}
+
+.blog-content {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #5c2626;
+}
+
+.blog-content p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  word-wrap: break-word !important;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  letter-spacing: 1px;
+}
+
+.blog-content strong {
+  font-weight: 600;
 }
 

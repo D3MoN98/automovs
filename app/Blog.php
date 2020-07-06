@@ -12,7 +12,7 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'blog_category_id', 'title', 'content', 'images'
+        'user_id', 'blog_category_id', 'title', 'excerpt', 'content', 'images'
     ];
 
     public function blog_category()

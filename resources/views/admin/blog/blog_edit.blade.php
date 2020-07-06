@@ -50,6 +50,8 @@
         padding: 8px;
     }
 </style>
+{{-- <link rel="stylesheet" type="text/css" href="{{asset('backend/js/bootstrap-wysihtml5/bootstrap-wysihtml5.css') }}"
+/> --}}
 @endpush
 
 @section('content')
@@ -76,9 +78,18 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="excerpt" class="col-lg-2 col-sm-2 control-label">Excerpt</label>
+                            <div class="col-lg-10">
+                                <input type="text" class="form-control" id="excerpt" value="{{$blog->excerpt}}"
+                                    minlength="2" name="blog[excerpt]" placeholder="Excerpt" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="content" class="col-lg-2 col-sm-2 control-label">Content</label>
                             <div class="col-lg-10">
-                                <textarea class="form-control" id="content" rows="8" name="blog[content]"
+                                <textarea class="wysihtml5 form-control" id="content" rows="8" name="blog[content]"
                                     placeholder="Content" required>{{$blog->content}}</textarea>
                             </div>
                         </div>
@@ -253,5 +264,15 @@
         })
     });
 </script>
-
+<script src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+    .create( document.querySelector( '#content' ) )
+    .then( editor => {
+            console.log( editor );
+    } )
+    .catch( error => {
+            console.error( error );
+    } );
+</script>
 @endpush

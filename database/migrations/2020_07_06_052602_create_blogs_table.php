@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration
             $table->bigInteger('blog_category_id')->unsigned();
             $table->foreign('blog_category_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->string('title');
+            $table->string('excerpt');
             $table->longText('content');
             $table->longText('images');
             $table->timestamps();
