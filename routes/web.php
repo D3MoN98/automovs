@@ -31,7 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::get('logout', 'FrontController@logout')->name('logout');
     Route::post('pay/{for}/{type}/{id}', 'PaymentController@store')->where(['id' => '[0-9]+'])->name('pay');
     Route::get('pay/success/{for}/{type}/{id}', 'PaymentController@success')->where(['id' => '[0-9]+'])->name('pay.success');
-
 });
 
 
@@ -56,15 +55,18 @@ Route::namespace('Admin')->prefix('admin/')->name('admin.')->group(function () {
         Route::resource('vehicle_book', 'VehicleBookController')->only('index');
         Route::resource('service_book', 'ServiceBookController')->only('index');
         Route::resource('vehicle_purchase', 'VehiclePurchaseController')->only('index');
+        Route::resource('blog', 'BlogController');
+        Route::resource('blog_category', 'BlogCategoryController');
+
         Route::post('vehicle/update/is_verified', 'VehicleController@is_verified_update');
         Route::post('vehicle/delete/image', 'VehicleController@image_delete');
         Route::post('service/delete/image', 'ServiceController@image_delete');
+        Route::post('blog/delete/image', 'BlogController@image_delete');
     });
-
 });
 
 
-Route::get('/clear', function() {
+Route::get('/clear', function () {
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:clear');
     $exitCode = Artisan::call('route:clear');
