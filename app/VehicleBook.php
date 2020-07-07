@@ -10,15 +10,18 @@ class VehicleBook extends Model
         'user_id', 'vehicle_id', 'payment_id', 'is_verified', 'verified_at'
     ];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User');
     }
 
-    public function vehicle(){
+    public function vehicle()
+    {
         return $this->belongsTo('App\Vehicle');
     }
 
-    public function payment(){
+    public function payment()
+    {
         return $this->belongsTo('App\Payment');
     }
 }

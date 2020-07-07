@@ -29,6 +29,6 @@ class UserRegistered extends Mailable
     public function build()
     {
         // return $this->view('view.name');
-        return $this->from('sjgalaxy98@gmail.com')->view('frontend.email.user_registered');
+        return $this->from('sjgalaxy98@gmail.com')->view('email.user_registered');
     }
 }
