@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'contact_no', 'address',
     ];
 
     /**
@@ -45,21 +45,21 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        if($this->roles()->where('name', $role)->first())
+        if ($this->roles()->where('name', $role)->first())
             return true;
         return false;
     }
 
     public function hasAnyRoles($roles)
     {
-        if($this->roles()->whereIn('name', $roles)->first())
+        if ($this->roles()->whereIn('name', $roles)->first())
             return true;
         return false;
     }
 
     public function isAdmin()
     {
-        if($this->hasRole('admin'))
+        if ($this->hasRole('admin'))
             return true;
         return false;
     }
@@ -71,25 +71,26 @@ class User extends Authenticatable
 
     public function hasVehicle($id)
     {
-        if($this->vehicles()->where('id', $id)->first())
+        if ($this->vehicles()->where('id', $id)->first())
             return true;
         return false;
     }
 
-    public function vehicleBooks(){
+    public function vehicleBooks()
+    {
         return $this->hasMany('App\VehicleBook');
     }
 
     public function hasVehicleBooked($id)
     {
-        if($this->vehicleBooks()->where('vehicle_id', $id)->first())
+        if ($this->vehicleBooks()->where('vehicle_id', $id)->first())
             return true;
         return false;
     }
 
     public function lastVehicleBooked($id)
     {
-        if($this->vehicleBooks()->where('vehicle_id', $id)->first())
+        if ($this->vehicleBooks()->where('vehicle_id', $id)->first())
             return $this->vehicleBooks()->where('vehicle_id', $id)->orderBy('created_at')->first();
         return false;
     }
@@ -97,7 +98,7 @@ class User extends Authenticatable
     public function lastVehicleBookedExpiredAt($id)
     {
         $last_vehicle_booked = $this->lastVehicleBooked($id);
-        if($last_vehicle_booked){
+        if ($last_vehicle_booked) {
             $created = new Carbon($last_vehicle_booked->created_at->addDays(15));
             $now = Carbon::now();
             // return $created->toDateTimeString();
@@ -106,27 +107,34 @@ class User extends Authenticatable
         return false;
     }
 
-    public function isLastVehicleBookedExpired($id){
+    public function isLastVehicleBookedExpired($id)
+    {
 
-        if(!$this->hasVehicleBooked($id))
+        if (!$this->hasVehicleBooked($id))
             return false;
 
         $days = $this->lastVehicleBookedExpiredAt($id);
 
-        if($days < 0)
+        if ($days < 0)
             return false;
         return true;
     }
 
 
-    public function vehiclePurchases(){
+    public function vehiclePurchases()
+    {
         return $this->hasMany('App\VehiclePurchase');
     }
 
     public function hasVehiclePurchased($id)
     {
-        if($this->vehiclePurchases()->where('vehicle_id', $id)->first())
+        if ($this->vehiclePurchases()->where('vehicle_id', $id)->first())
             return true;
         return false;
+    }
+
+    public function serviceBooks()
+    {
+        return $this->hasMany('App\ServiceBook');
     }
 }

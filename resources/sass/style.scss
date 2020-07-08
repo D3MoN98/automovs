@@ -31,6 +31,7 @@ $thetransition: all .5s cubic-bezier(1, .25, 0, .75) 0s;
     font-family: 'Ubuntu', sans-serif;
 }
 
+
 textarea:hover,
 input:hover,
 textarea:active,
@@ -655,6 +656,82 @@ footer {
     }
 
 
+}
+
+.profile {
+    .nav {
+        .nav-link {
+            background-color: transparent;
+            color: #5c2626;
+            outline: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            &:hover {
+                opacity: 80%;
+            }
+
+            &.active:hover {
+                opacity: 100%;
+            }
+
+            &.active {
+                background-color: $color-two !important;
+                color: $color-one;
+            }
+
+        }
+    }
+
+    .list-group {
+        .list-group-item {
+            border: 1px solid $color-two;
+            border-radius: 5px;
+            background-color: transparent;
+            margin-bottom: 10px;
+
+            .img-otr {
+                height: 115px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 5px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 1s;
+
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 300;
+                word-wrap: break-word !important;
+            }
+
+            a {
+                color: $color-two;
+
+                &:hover {
+                    opacity: 80%;
+                }
+
+            }
+
+            .list-right {
+                display: flex;
+                flex-flow: column;
+                text-align: right;
+
+                p:last-of-type {
+                    margin: 0;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
 }
 
 .invoice {

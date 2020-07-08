@@ -28,6 +28,9 @@ Route::get('terms_and_condition', 'FrontController@terms_and_condition')->name('
 Route::get('privacy_policy', 'FrontController@privacy_policy')->name('privacy_policy');
 
 Route::middleware('auth')->group(function () {
+    Route::get('profile', 'FrontController@profile')->name('profile');
+    Route::post('profile/update/{id}', 'FrontController@profile_update')->where(['id' => '[0-9]+'])->name('profile.update');
+    Route::post('password_update/update/{id}', 'FrontController@password_update')->where(['id' => '[0-9]+'])->name('profile.update.passsword');
     Route::get('vehicle/create', 'FrontController@vehicle_create')->name('vehicle.create');
     Route::post('vehicle/store', 'FrontController@vehicle_store')->name('vehicle.store');
     Route::get('logout', 'FrontController@logout')->name('logout');

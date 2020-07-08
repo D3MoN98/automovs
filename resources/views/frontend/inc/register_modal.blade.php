@@ -1,44 +1,49 @@
-
-
 <!-- Modal -->
-<div class="modal fade" id="register-model" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+<div class="modal fade" id="register-model" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form id="regForm" action="{{route('register_action')}}" method="POST" class="reg-form shadow-sm wow fadeInRight" data-wow-delay="0.5s">
+            <form id="regForm" action="{{route('register_action')}}" method="POST"
+                class="reg-form shadow-sm wow fadeInRight" data-wow-delay="0.5s">
                 @csrf
 
                 <div class="modal-header">
                     <h5 class="modal-title cmn-hdr">Register</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <strong>Register Successfull</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Register Successfull</strong>
                     </div>
 
                     <script>
-                      $(".alert").alert();
+                        $(".alert").alert();
                     </script>
 
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="contact_no" class="form-control" placeholder="Your Contact No">
+                        <input type="tel" name="contact_no" class="form-control" placeholder="Your Contact No" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Your Password">
+                        <input type="text" name="address" class="form-control" placeholder="Your Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Your Password">
+                        <input type="password" name="password" class="form-control" placeholder="Your Password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="confirm_password" class="form-control"
+                            placeholder="Confirm Your Password" required>
                     </div>
                 </div>
                 <div class="modal-footer">

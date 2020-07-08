@@ -26,6 +26,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('vehicle.create')}}">Add Vehicle</a>
                                 </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('profile')}}">Profile</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('logout')}}">Logout</a>
                                 </li>

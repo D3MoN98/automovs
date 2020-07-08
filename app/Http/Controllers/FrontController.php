@@ -26,6 +26,7 @@ class FrontController extends Controller
             'name' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'contact_no' => 'required',
+            'address' => 'required',
             'password' => 'min:6|required_with:confirm_password|same:confirm_password',
             'confirm_password' => 'min:6'
         ], [
@@ -33,6 +34,7 @@ class FrontController extends Controller
             'email.required' => 'Email field is required.',
             'email.email' => 'Please proide an valid email address.',
             'contact_no.required' => 'Contact No field is required.',
+            'address.required' => 'Address field is required.',
             'password.required' => 'Password field is required.',
             'password.same' => 'Confirm password should be match with password.'
         ]);
@@ -45,6 +47,7 @@ class FrontController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'contact_no' => $request->contact_no,
+            'address' => $request->address,
             'password' => Hash::make($request->password),
         ])->id;
 
@@ -191,6 +194,14 @@ class FrontController extends Controller
         ]);
     }
 
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('frontend.profile')->with([
+            'user' => $user
+        ]);
+    }
+
     public function about()
     {
         return view('frontend.about');
@@ -204,5 +215,57 @@ class FrontController extends Controller
     public function privacy_policy()
     {
         return view('frontend.privacy_policy');
+    }
+
+    public function profile_update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => ['required', 'email', Rule::unique('users', 'email')->ignore($id)],
+            'contact_no' => 'required',
+            'address' => 'required',
+        ], [
+            'name.required' => 'Name field is required.',
+            'email.required' => 'Email field is required.',
+            'email.email' => 'Please proide an valid email address.',
+            'contact_no.required' => 'Contact No field is required.',
+            'address.required' => 'Address field is required.',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        User::findOrFail($id)->update($request->all());
+
+        return response()->json(['success' => 'profile updated']);
+    }
+
+    public function password_update(Request $request)
+    {
+        $user = Auth::user();
+        $current_password = $request->current_password;
+        $validator = Validator::make($request->all(), [
+            'current_password' => ['required', function ($attribute, $current_password, $fail) use ($user) {
+                if (!Hash::check($current_password, $user->password)) {
+                    return $fail(__('The current password is incorrect.'));
+                }
+            }],
+            'new_password' => 'min:6|required_with:confirm_password|same:confirm_password',
+            'confirm_password' => 'min:6'
+        ], [
+            'new_password.same' => 'Confirm Password should be same with new password'
+        ]);
+
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        User::find($user->id)->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return response()->json(['success' => 'password updated']);
     }
 }

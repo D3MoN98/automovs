@@ -120,6 +120,42 @@
     font-size: 1rem;
     font-weight: 400;
   }
+
+  .profile .tab-otr {
+    flex: 1 1 100%;
+    max-width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+  }
+
+  .profile .tab-otr .nav {
+    display: inline-block;
+  }
+
+  .profile .tab-otr .nav-link {
+    display: inline-block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .profile .list-group-item .col-sm-6 {
+    flex: 1 0 50%;
+  }
+
+  .profile .list-group-item .list-right {
+    margin-top: 10px;
+  }
+
+  .profile .list-group-item h4 {
+    font-size: large;
+  }
+
+  .profile .list-group-item p {
+    font-size: smaller !important;
+    font-weight: 500 !important;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

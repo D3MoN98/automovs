@@ -145,6 +145,44 @@ $color-four: #e84a5f;
             font-weight: 400;
         }
     }
+
+    .profile {
+        .tab-otr {
+            flex: 1 1 100%;
+            max-width: 100%;
+            overflow: auto;
+            white-space: nowrap;
+            margin-bottom: 20px;
+
+            .nav {
+                display: inline-block;
+            }
+
+            .nav-link {
+                display: inline-block;
+                width: fit-content;
+            }
+        }
+
+        .list-group-item {
+            .col-sm-6 {
+                flex: 1 0 50%;
+            }
+
+            .list-right {
+                margin-top: 10px;
+            }
+
+            h4 {
+                font-size: large;
+            }
+
+            p {
+                font-size: smaller !important;
+                font-weight: 500 !important;
+            }
+        }
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
