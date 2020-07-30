@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['verify' => true]);
 Route::get('/', 'FrontController@home')->name('home');
+Route::get('/home', 'FrontController@home')->name('home');
 Route::get('blogs', 'FrontController@blogs')->name('blogs');
 Route::get('blog/{id}', 'FrontController@blog_detail')->where('id', '[0-9]+')->name('blog.show');
 Route::get('vehicle/{id}', 'FrontController@vehicle_detail')->where('id', '[0-9]+')->name('vehicle.show');
@@ -55,7 +57,7 @@ Route::namespace('Admin')->prefix('admin/')->name('admin.')->group(function () {
         Route::resource('vehicle', 'VehicleController');
         Route::resource('service_type', 'ServiceTypeController');
         Route::resource('service', 'ServiceController');
-        Route::resource('oreder', 'OrderController');
+        // Route::resource('oreder', 'OrderController');
         Route::resource('payment', 'PaymentController')->only('index', 'show');
         Route::resource('vehicle_book', 'VehicleBookController')->only('index');
         Route::resource('service_book', 'ServiceBookController')->only('index');
@@ -81,4 +83,5 @@ Route::get('/clear', function () {
 
 
 //Tester
-Route::get('/send-sms', 'TestController@send_sms')->name('send-sms');
+// Route::get('/send-sms', 'TestController@send_sms')->name('send-sms');
+// Auth::routes();

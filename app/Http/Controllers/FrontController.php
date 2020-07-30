@@ -43,16 +43,18 @@ class FrontController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $id = User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'contact_no' => $request->contact_no,
             'address' => $request->address,
             'password' => Hash::make($request->password),
-        ])->id;
+        ]);
+
+        $user->sendEmailVerificationNotification();
 
         UserRole::create([
-            'user_id' => $id,
+            'user_id' => $user->id,
             'role_id' => 2
         ]);
 

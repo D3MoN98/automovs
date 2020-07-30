@@ -11,14 +11,15 @@
         "php": "^7.2.5",
         "androidneha/laravel-msg91": "^1.1",
         "aws/aws-sdk-php": "^3.141",
-        "sabberworm/php-css-parser": "*",
         "barryvdh/laravel-dompdf": "^0.8.6",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "instamojo/instamojo-php": "^0.4.0",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.1",
+        "sabberworm/php-css-parser": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
