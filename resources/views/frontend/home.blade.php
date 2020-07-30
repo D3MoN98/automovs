@@ -12,7 +12,8 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    register to sell or buy a car now(once the customer clicks on the link the register
+                                    option should pop up)
                                 </p>
                                 <hr class="my-2">
                             </div>
@@ -24,7 +25,8 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    get your service done now(once the customer clicks on the link the service option
+                                    should pop up)
                                 </p>
                                 <hr class="my-2">
                             </div>
@@ -48,16 +50,19 @@
             <div class="col-md-12">
                 <div class="tab-otr">
                     <ul class="tab-ul">
-                        <li><a href="{{route('vehicles.sort_by', ['all'])}}" class="link sort-link active"><i class="far fa-cars"></i> All</a></li>
-                        <li><a href="{{route('vehicles.sort_by', ['4-wheeler'])}}" class="link sort-link"><i class="far fa-car-side"></i> Cars</a></li>
-                        <li><a href="{{route('vehicles.sort_by', ['2-wheeler'])}}" class="link sort-link"><i class="far fa-motorcycle"></i> Bikes</a></li>
+                        <li><a href="{{route('vehicles.sort_by', ['all'])}}" class="link sort-link active"><i
+                                    class="far fa-cars"></i> All</a></li>
+                        <li><a href="{{route('vehicles.sort_by', ['4-wheeler'])}}" class="link sort-link"><i
+                                    class="far fa-car-side"></i> Cars</a></li>
+                        <li><a href="{{route('vehicles.sort_by', ['2-wheeler'])}}" class="link sort-link"><i
+                                    class="far fa-motorcycle"></i> Bikes</a></li>
                         <li class="dropdown">
-                            <a class="link dropdown-toggle" href="#" id="dropdownId"
-                                data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="farse"><i class="far fa-cogs"></i> Services</a>
+                            <a class="link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="farse"><i class="far fa-cogs"></i> Services</a>
                             <div class="dropdown-menu shadow-sm" aria-labelledby="dropdownId">
                                 @foreach ($service_types as $service_type)
-                                <a class="dropdown-item sort-link" href="{{route('services.sort_by_service_type', ['id' => $service_type->id])}}">{{$service_type->name}}</a>
+                                <a class="dropdown-item sort-link"
+                                    href="{{route('services.sort_by_service_type', ['id' => $service_type->id])}}">{{$service_type->name}}</a>
                                 @endforeach
                             </div>
                         </li>

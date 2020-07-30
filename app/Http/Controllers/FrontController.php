@@ -171,7 +171,7 @@ class FrontController extends Controller
     public function service_detail($id)
     {
         $service = Service::find($id);
-        $services = Service::all()->except($id);
+        $services = Service::where('service_type_id', $service->service_type_id)->where('id', '!=', $id)->get();
         return view('frontend.service_detail')->with([
             'service' => $service,
             'services' => $services,

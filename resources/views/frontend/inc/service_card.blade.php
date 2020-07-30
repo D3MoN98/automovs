@@ -10,7 +10,7 @@
         </div>
     </a>
     <div class="card-body">
-        <a href=""><h5 class="card-title">{{$service->name}}</h5></a>
+        <a href="{{route('service.show', $service->id)}}"><h5 class="card-title">{{$service->name}}</h5></a>
         <p class="card-text">Price start at <i class="far fa-rupee-sign"></i>
             @php
                 $prices = json_decode($service->price);

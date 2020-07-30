@@ -6,13 +6,15 @@
     <a href="{{route('vehicle.show', $vehicle->id)}}">
         <div class="card-img-otr">
             @php
-                $images = explode(',', $vehicle->images);
+            $images = explode(',', $vehicle->images);
             @endphp
             <img src="{{asset('storage/'.$images[0])}}" class="card-img-top" alt="...">
         </div>
     </a>
     <div class="card-body">
-        <a href=""><h5 class="card-title">{{$vehicle->brand}} - {{$vehicle->model}}</h5></a>
+        <a href="{{route('vehicle.show', $vehicle->id)}}">
+            <h5 class="card-title">{{$vehicle->brand}} - {{$vehicle->model}}</h5>
+        </a>
         <p class="card-text">Price <i class="far fa-rupee-sign"></i> {{$vehicle->price}}</p>
         <ul class="card-deatils">
             <li><i class="far fa-calendar-alt"></i> {{$vehicle->year_bought}}</li>
