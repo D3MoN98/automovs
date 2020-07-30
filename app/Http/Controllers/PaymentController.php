@@ -53,6 +53,10 @@ class PaymentController extends Controller
      */
     public function store(Request $request, $for, $type, $id)
     {
+        if (is_null(Auth::user()->address)) {
+            return redirect()->back()->with('error', 'Please update your address first');
+        }
+
         $api = new Instamojo(
             config('services.instamojo.api_key'),
             config('services.instamojo.auth_token'),
@@ -230,7 +234,7 @@ class PaymentController extends Controller
                 'contact_no' => $vehicle_book->user->contact_no,
                 'name' => $vehicle_book->user->name,
                 'email' => $vehicle_book->user->email,
-                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'address' => $vehicle_book->user->address,
                 'seller_name' => $vehicle_book->vehicle->user->name,
                 'seller_contact_no' => $vehicle_book->vehicle->user->contact_no,
                 'vehicle_name' => $vehicle_book->vehicle->brand . ' - ' . $vehicle_book->vehicle->model,
@@ -267,7 +271,7 @@ class PaymentController extends Controller
                 'name' => $vehicle_purchase->user->name,
                 'email' => $vehicle_purchase->user->email,
                 'contact_no' => $vehicle_purchase->user->contact_no,
-                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'address' => $vehicle_purchase->user->address,
                 'seller_name' => $vehicle_purchase->vehicle->user->name,
                 'seller_contact_no' => $vehicle_purchase->vehicle->user->contact_no,
                 'vehicle_name' => $vehicle_purchase->vehicle->brand . ' - ' . $vehicle_purchase->vehicle->model,
@@ -305,7 +309,7 @@ class PaymentController extends Controller
                 'contact_no' => $service_book->user->contact_no,
                 'name' => $service_book->user->name,
                 'email' => $service_book->user->email,
-                'address' => '23/4b Banamali Nasker Road, Kolkata - 700060',
+                'address' => $service_book->user->address,
                 'service_id' => $service_book->service->id,
                 'service_name' => $service_book->service->name,
                 'service_url' => route('service.show', ['id' => $service_book->service->id])
