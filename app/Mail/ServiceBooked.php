@@ -31,7 +31,7 @@ class ServiceBooked extends Mailable
      */
     public function build()
     {
-        return $this->from('sjgalaxy98@gmail.com')->markdown('emails.service.book')->with(['service_book' => $this->service_book])
+        return $this->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))->markdown('emails.service.book')->with(['service_book' => $this->service_book])
             ->attach(public_path('storage/' . $this->service_book->payment->invoice), [
                 'as' => 'invoice.pdf',
                 'mime' => 'application/pdf',

@@ -31,7 +31,7 @@ class VehiclePurchased extends Mailable
      */
     public function build()
     {
-        return $this->from('sjgalaxy98@gmail.com')->markdown('emails.vehicles.purchase')->with(['vehicle_purchase' => $this->vehicle_purchase])
+        return $this->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))->markdown('emails.vehicles.purchase')->with(['vehicle_purchase' => $this->vehicle_purchase])
             ->attach(public_path('storage/' . $this->vehicle_purchase->payment->invoice), [
                 'as' => 'invoice.pdf',
                 'mime' => 'application/pdf',
