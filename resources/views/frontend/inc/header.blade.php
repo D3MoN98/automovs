@@ -20,7 +20,16 @@
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('cars')}}">Cars</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('bikes')}}">Bikes</a>
+                                </li>
+                                <li class="nav-item active">
                                     <a class="nav-link" href="{{route('blogs')}}">Blogs</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('services')}}">Services</a>
                                 </li>
                                 @auth
                                 <li class="nav-item">
@@ -38,8 +47,9 @@
                                         data-target="#login-model">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" type="button" data-toggle="modal"
-                                        data-target="#register-model">Register</a>
+                                    <a class="nav-link" href="{{route('register')}}">Register</a>
+                                    {{-- <a class="nav-link" href="#" type="button" data-toggle="modal"
+                                        data-target="#register-model">Register</a> --}}
                                 </li>
                                 @endauth
                             </ul>

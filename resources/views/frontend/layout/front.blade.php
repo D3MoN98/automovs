@@ -39,7 +39,7 @@
     @guest
     @include('frontend.inc.login_modal')
 
-    @include('frontend.inc.register_modal')
+    {{-- @include('frontend.inc.register_modal') --}}
     @endguest
 
 

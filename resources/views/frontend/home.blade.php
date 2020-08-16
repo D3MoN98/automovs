@@ -12,8 +12,7 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    register to sell or buy a car now(once the customer clicks on the link the register
-                                    option should pop up)
+                                    register to sell or buy a car now
                                 </p>
                                 <hr class="my-2">
                             </div>
@@ -25,8 +24,7 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    get your service done now(once the customer clicks on the link the service option
-                                    should pop up)
+                                    get your service done now
                                 </p>
                                 <hr class="my-2">
                             </div>

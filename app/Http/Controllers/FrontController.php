@@ -20,6 +20,11 @@ use App\Mail\UserRegistered;
 class FrontController extends Controller
 {
 
+    public function register()
+    {
+        return view('frontend.register');
+    }
+
     public function register_action(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -96,10 +101,37 @@ class FrontController extends Controller
     {
         $vehicles = Vehicle::all();
         $service_types = ServiceType::all();
+        $services = Service::all();
 
         return view('frontend.home')->with([
             'vehicles' => $vehicles,
+            'services' => $services,
             'service_types' => $service_types,
+        ]);
+    }
+
+    public function cars()
+    {
+        $vehicles = Vehicle::where('type', '4-wheeler')->paginate(9);
+        return view('frontend.cars')->with([
+            'vehicles' => $vehicles,
+        ]);
+    }
+
+    public function bikes()
+    {
+        $vehicles = Vehicle::where('type', '2-wheeler')->paginate(9);
+        return view('frontend.bikes')->with([
+            'vehicles' => $vehicles,
+        ]);
+    }
+
+
+    public function services()
+    {
+        $services = Service::paginate(9);
+        return view('frontend.services')->with([
+            'services' => $services,
         ]);
     }
 

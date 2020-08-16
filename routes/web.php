@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 Route::get('/', 'FrontController@home')->name('home');
 Route::get('/home', 'FrontController@home')->name('home');
+Route::get('register', 'FrontController@register')->name('register');
+Route::get('cars', 'FrontController@cars')->name('cars');
+Route::get('bikes', 'FrontController@bikes')->name('bikes');
+Route::get('services', 'FrontController@services')->name('services');
 Route::get('blogs', 'FrontController@blogs')->name('blogs');
 Route::get('blog/{id}', 'FrontController@blog_detail')->where('id', '[0-9]+')->name('blog.show');
 Route::get('vehicle/{id}', 'FrontController@vehicle_detail')->where('id', '[0-9]+')->name('vehicle.show');
@@ -41,7 +45,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// Route::get('/admin', 'Admin\AdminController@login');
 
 Route::namespace('Admin')->prefix('admin/')->name('admin.')->group(function () {
     Route::get('/', 'AdminController@login');
