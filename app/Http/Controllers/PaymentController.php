@@ -25,6 +25,8 @@ set_time_limit(300);
 
 class PaymentController extends Controller
 {
+    private $purchase_percentage = 2;
+
     /**
      * Display a listing of the resource.
      *
@@ -73,7 +75,7 @@ class PaymentController extends Controller
             } else if ($for == 'vehicle' && $type == 'purchase') {
                 $vehicle = Vehicle::find($id);
                 $purpose = 'Purchased ' . $vehicle->brand . ' ' . $vehicle->brand;
-                $amount = $vehicle->price;
+                $amount = ($vehicle->price * $this->purchase_percentage) / 100;
             } else if ($for == 'service' && $type == 'booking') {
                 $service = Service::find($id);
                 $purpose = 'Booked Service ' . $service->brand . ' ' . $service->brand;

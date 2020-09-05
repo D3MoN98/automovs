@@ -1,12 +1,14 @@
 @foreach ($vehicles as $vehicle)
 <div class="card shadow-sm wow fadeInLeft" data-wow-delay="0.2s">
     @if ($vehicle->isPuchased())
+        <div class="cr cr-top cr-left">Sold Out</div>
+    @else
+        @auth
+        @if (Auth::user()->isLastVehicleBookedExpired($vehicle->id))
+        <div class="cr cr-top cr-left bg-primary"><i class="far fa-badge-check"></i> Verified</div>
+        @endif
+        @endauth
     @endif
-    @auth
-    @if (Auth::user()->isLastVehicleBookedExpired($vehicle->id))
-    <div class="cr cr-top cr-left bg-primary"><i class="far fa-badge-check"></i> Verified</div>
-    @endif
-    @endauth
     <a href="{{route('vehicle.show', $vehicle->id)}}">
         <div class="card-img-otr">
             @php
