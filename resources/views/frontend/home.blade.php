@@ -19,6 +19,18 @@
                         </div>
                     </div>
                     <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    register to sell or buy a car now
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
                         <img class="card-img-top" src="{{asset('frontend/images/banner-01.jpg')}}" alt="">
                         <div class="card-img-overlay">
                             <div class="jumbotron bg-default">

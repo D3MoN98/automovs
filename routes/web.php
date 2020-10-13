@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::get('logout', 'FrontController@logout')->name('logout');
     Route::post('pay/{for}/{type}/{id}', 'PaymentController@store')->where(['id' => '[0-9]+'])->name('pay');
     Route::get('pay/success/{for}/{type}/{id}', 'PaymentController@success')->where(['id' => '[0-9]+'])->name('pay.success');
+    Route::post('coupon/check', 'FrontController@coupon_check')->name('coupon.check');
 });
 
 
@@ -72,6 +73,7 @@ Route::namespace('Admin')->prefix('admin/')->name('admin.')->group(function () {
         Route::post('vehicle/delete/image', 'VehicleController@image_delete');
         Route::post('service/delete/image', 'ServiceController@image_delete');
         Route::post('blog/delete/image', 'BlogController@image_delete');
+        Route::resource('coupon', 'CouponController');
     });
 });
 
@@ -86,5 +88,5 @@ Route::get('/clear', function () {
 
 
 //Tester
-// Route::get('/send-sms', 'TestController@send_sms')->name('send-sms');
+Route::get('/send-sms', 'TestController@send_sms')->name('send-sms');
 // Auth::routes();

@@ -3,7 +3,8 @@
     <div class="brand">
 
         <a href="{{route('admin.')}}" class="logo">
-            <img src="{{ asset('backend/images/logo.png') }}" alt="">
+            {{-- <img src="{{ asset('backend/images/logo.png') }}" alt=""> --}}
+            Automovs
         </a>
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars"></div>

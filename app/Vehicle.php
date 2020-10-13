@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-        /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -48,8 +48,9 @@ class Vehicle extends Model
         return $this->hasOne('App\VehiclePurchase');
     }
 
-    public function isPuchased(){
-        if($this->purchase()->first())
+    public function isPuchased()
+    {
+        if ($this->purchase()->first())
             return true;
         return false;
     }

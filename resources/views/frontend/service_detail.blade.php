@@ -71,13 +71,31 @@
                         <input type="hidden" name="amount" value="{{$price->price}}">
                         <button type="submit" class="btn btn-primary">Book <i
                                 class="far fa-rupee-sign"></i>{{$price->price}}</button>
+                        <input type="hidden" name="coupon" value="0">
                     </form>
                     @endforeach
+
                     @else
                     <button class="btn btn-primary" href="#" type="button" data-toggle="modal"
                         data-target="#login-model">Book</button>
                     @endauth
                 </div>
+                @auth
+                <div class="input-group mt-3" style="width: 75%">
+                    <input type="text" class="form-control coupon-input" placeholder="Apply Coupon Code"
+                        aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary apply-coupon" type="button"
+                            id="button-addon1">Apply</button>
+                    </div>
+                    <div class="invalid-feedback">
+                        Invalid coupon code.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                @endauth
             </div>
         </div>
     </div>
@@ -152,5 +170,55 @@
                 }
             ]
         });
+</script>
+
+<script>
+    $(document).on('click', '.apply-coupon', function(){
+        $('.coupon-input').removeClass('is-invalid');
+        var coupon = $('.coupon-input').val();
+        $.ajax({
+            url: '{{route("coupon.check")}}',
+            type: 'post',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "coupon": coupon
+            },
+            dataType: 'json',
+            success:function(data){
+                if(data.error){
+                    $('.coupon-input').addClass('is-invalid');
+                    $('input[name="coupon"]').val(0);
+                } else if(data.success){
+                    $('.coupon-input').removeClass('is-invalid');
+                    $('.coupon-input').addClass('is-valid');
+                    $('.valid-feedback').html(data.data.description);
+                    $('input[name="coupon"]').val(data.data.id);
+                    $('.apply-coupon').addClass('coupon-applied');
+                    $('.coupon-applied').removeClass('apply-coupon');
+                    $('.coupon-applied').html('Coupon Applied');
+                    $('.coupon-input').attr('disabled', 'disabled');
+                }
+
+
+            }
+        })
+    });
+
+    $(document).on('click', '.coupon-applied', function(){
+        $('input[name="coupon"]').val(0);
+        $('.coupon-applied').addClass('apply-coupon');
+        $('.apply-coupon').removeClass('coupon-applied');
+        $('.apply-coupon').html('Apply');
+        $('.coupon-input').removeAttr('disabled');
+        $('.coupon-input').removeClass('is-valid');
+    });
+
+    $(document).on('mouseover', '.coupon-applied', function(){
+        $(this).html('Remove Coupon');
+    });
+
+    $(document).on('mouseleave', '.coupon-applied', function(){
+        $(this).html('Coupon Applied');
+    });
 </script>
 @endpush

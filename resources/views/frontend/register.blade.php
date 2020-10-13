@@ -7,6 +7,12 @@
         color: #fff5da;
         border: 1px solid transparent;
     }
+
+    .input-group-text {
+        background: transparent;
+        border: 1px solid #5c2626;
+        color: #5c2626;
+    }
 </style>
 <section class="banner">
     <div class="container">
@@ -44,7 +50,13 @@
                     <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="contact_no" class="form-control" placeholder="Your Contact No" required>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend3">+91</span>
+                        </div>
+                        <input type="tel" name="contact_no" class="form-control" placeholder="Your Contact No" required>
+                    </div>
+                    {{-- <input type="tel" name="contact_no" class="form-control" placeholder="Your Contact No" required> --}}
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control" placeholder="Your Address" required>

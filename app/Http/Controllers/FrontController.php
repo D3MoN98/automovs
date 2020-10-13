@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\City;
+use App\Coupon;
 use App\Service;
 use App\ServiceType;
 use App\User;
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserRegistered;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class FrontController extends Controller
 {
@@ -51,7 +54,7 @@ class FrontController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'contact_no' => $request->contact_no,
+            'contact_no' => '91' . $request->contact_no,
             'address' => $request->address,
             'password' => Hash::make($request->password),
         ]);
@@ -270,9 +273,15 @@ class FrontController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        User::findOrFail($id)->update($request->all());
 
-        return response()->json(['success' => 'profile updated']);
+        User::findOrFail($id)->update([
+            'contact_no' => '91' . $request->contact_no,
+            'address' => $request->address,
+            'email' => $request->email,
+            'name' => $request->name,
+        ]);
+
+        return response()->json(['success' => 'profile updated', 'das' => $request->all()]);
     }
 
     public function password_update(Request $request)
@@ -301,5 +310,15 @@ class FrontController extends Controller
         ]);
 
         return response()->json(['success' => 'password updated']);
+    }
+
+    public function coupon_check(Request $request)
+    {
+        try {
+            $coupon = Coupon::where('code', $request->coupon)->firstOrFail();
+            return response()->json(['success' => 'Coupon exist', 'data' => $coupon]);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'No coupon found']);
+        }
     }
 }

@@ -71,36 +71,37 @@
                 </div>
                 <div class="action-otr wow fadeInRight" data-wow-delay="1s">
                     @if (!$vehicle->isPuchased())
-                        @auth
-                            @if (!Auth::user()->hasVehicle($vehicle->id))
+                    @auth
+                    @if (!Auth::user()->hasVehicle($vehicle->id))
 
-                                @if(Auth::user()->hasVehiclePurchased($vehicle->id))
-                                <button type="submit" class="btn btn-primary">Vehicle Purchased</button>
+                    @if(Auth::user()->hasVehiclePurchased($vehicle->id))
+                    <button type="submit" class="btn btn-primary">Vehicle Purchased</button>
 
-                                @elseif (!Auth::user()->isLastVehicleBookedExpired($vehicle->id))
-                                <form action="{{route('pay', ['for' => 'vehicle', 'type' => 'booking', 'id' => $vehicle->id ])}}"
-                                    method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary">Book Now</button>
-                                </form>
+                    @elseif (!Auth::user()->isLastVehicleBookedExpired($vehicle->id))
+                    <form action="{{route('pay', ['for' => 'vehicle', 'type' => 'booking', 'id' => $vehicle->id ])}}"
+                        method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Book Now at <i class="far fa-rupee-sign"></i>
+                            1000</button>
+                    </form>
 
-                                @elseif(Auth::user()->hasVehicleBooked($vehicle->id) &&
-                                Auth::user()->isLastVehicleBookedExpired($vehicle->id))
-                                <form action="{{route('pay', ['for' => 'vehicle', 'type' => 'purchase', 'id' => $vehicle->id ])}}"
-                                    method="post">
-                                    @csrf
-                                    <button type="button" class="btn btn-primary">Vehicle is verified</button>
-                                    <button type="submit" class="btn btn-primary">Buy Now</button>
-                                </form>
+                    @elseif(Auth::user()->hasVehicleBooked($vehicle->id) &&
+                    Auth::user()->isLastVehicleBookedExpired($vehicle->id))
+                    <form action="{{route('pay', ['for' => 'vehicle', 'type' => 'purchase', 'id' => $vehicle->id ])}}"
+                        method="post">
+                        @csrf
+                        <button type="button" class="btn btn-primary">Vehicle is verified</button>
+                        <button type="submit" class="btn btn-primary">Buy Now</button>
+                    </form>
 
-                                @endif
+                    @endif
 
-                            @endif
+                    @endif
 
-                        @else
-                            <button class="btn btn-primary" href="#" type="button" data-toggle="modal"
-                            data-target="#login-model">Book</button>
-                        @endauth
+                    @else
+                    <button class="btn btn-primary" href="#" type="button" data-toggle="modal"
+                        data-target="#login-model">Book Now at <i class="far fa-rupee-sign"></i> 1000</button>
+                    @endauth
                     @endif
                 </div>
             </div>

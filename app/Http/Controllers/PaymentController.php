@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Coupon;
 use App\Mail\ServiceBooked;
 use App\Mail\VehicleBooked;
 use App\Mail\VehiclePurchased;
@@ -80,6 +81,15 @@ class PaymentController extends Controller
                 $service = Service::find($id);
                 $purpose = 'Booked Service ' . $service->brand . ' ' . $service->brand;
                 $amount = $request->amount;
+
+                if ($request->coupon != 0) {
+                    $coupon = Coupon::find($request->coupon);
+                    if ($coupon->is_fixed === 1) {
+                        $amount -= $coupon->discount_amount;
+                    } else {
+                        $amount -= $amount * $coupon->discount_amount / 100;
+                    }
+                }
             }
 
             $response = $api->paymentRequestCreate(array(
