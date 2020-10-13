@@ -6,11 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Carbon\Carbon;
-use BeyondCode\Vouchers\Traits\CanRedeemVouchers;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, CanRedeemVouchers;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
