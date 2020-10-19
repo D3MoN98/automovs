@@ -92,6 +92,8 @@
                         @csrf
                         <button type="button" class="btn btn-primary">Vehicle is verified</button>
                         <button type="submit" class="btn btn-primary">Buy Now</button>
+                        <span class="badge badge-info">NOTE!</span> <span>Pay 2% of the cost of the car to the
+                            company</span>
                     </form>
 
                     @endif

@@ -11,15 +11,16 @@
         background-color: transparent;
         border: 1px solid #5c2626;
     }
-    .custom-select2{
+
+    .custom-select2 {
         background: transparent !important;
-        border: 1px solid #5c2626!important;
-    }
-    .select2-selection__placeholder{
-        color: #5c2626!important;
-        letter-spacing: 1px;
+        border: 1px solid #5c2626 !important;
     }
 
+    .select2-selection__placeholder {
+        color: #5c2626 !important;
+        letter-spacing: 1px;
+    }
 </style>
 @endpush
 
@@ -29,12 +30,12 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="jumbotron bg-default">
-                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Add Post</h1>
-                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Add Vehicle</h1>
+                    {{-- <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias officia magnam,
                         perspiciatis temporibus porro, repellat iste saepe ullam consequuntur, inventore fuga soluta
                         eius beatae assumenda nesciunt veritatis autem cumque iure.
-                    </p>
+                    </p> --}}
                 </div>
             </div>
         </div>
@@ -45,52 +46,62 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{route('vehicle.store')}}" method="POST" enctype="multipart/form-data" class="cmxform reg-form wow fadeInLeft"  id="vehicleForm" data-wow-delay="0.8s">
+                <form action="{{route('vehicle.store')}}" method="POST" enctype="multipart/form-data"
+                    class="cmxform reg-form wow fadeInLeft" id="vehicleForm" data-wow-delay="0.8s">
                     @csrf
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="brand" minlength="2" name="vehicle[brand]" placeholder="Brand" required>
+                        <input type="text" class="form-control" id="brand" minlength="2" name="vehicle[brand]"
+                            placeholder="Brand" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="model" name="vehicle[model]" placeholder="Model" required>
+                        <input type="text" class="form-control" id="model" name="vehicle[model]" placeholder="Model"
+                            required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="variant" name="vehicle[variant]" placeholder="Variant" required>
+                        <input type="text" class="form-control" id="variant" name="vehicle[variant]"
+                            placeholder="Variant" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="registration_number" name="vehicle[registration_number]" placeholder="Registration Number" required>
+                        <input type="text" class="form-control" id="registration_number"
+                            name="vehicle[registration_number]" placeholder="Registration Number" required>
                     </div>
 
                     <div class="form-group">
-                        <select  class="form-control custom-select2" id="type" name="vehicle[type]" placeholder="Type" required>
+                        <select class="form-control custom-select2" id="type" name="vehicle[type]" placeholder="Type"
+                            required>
                             <option value="4-wheeler">4 Wheeler</option>
                             <option value="2-wheeler">2 Wheeler</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="driven" name="vehicle[driven]" placeholder="Driven" required>
+                        <input type="text" class="form-control" id="driven" name="vehicle[driven]" placeholder="Driven"
+                            required>
                     </div>
 
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="color" name="vehicle[color]" placeholder="Color" required>
+                        <input type="text" class="form-control" id="color" name="vehicle[color]" placeholder="Color"
+                            required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" onkeypress="return onlyNumberKey(event)" maxlength="4" class="form-control" id="year_bought" name="vehicle[year_bought]" placeholder="Year  Bought" required>
+                        <input type="text" onkeypress="return onlyNumberKey(event)" maxlength="4" class="form-control"
+                            id="year_bought" name="vehicle[year_bought]" placeholder="Year  Bought" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" onkeypress="return onlyNumberKey(event)" maxlength="4" class="form-control" id="insurance" name="vehicle[insurance]" placeholder="Insurance" required>
+                        <input type="text" onkeypress="return onlyNumberKey(event)" maxlength="4" class="form-control"
+                            id="insurance" name="vehicle[insurance]" placeholder="Insurance" required>
                     </div>
 
 
                     <div class="form-group">
-                        <select  class="form-control custom-select2" id="location" name="vehicle[location]" required>
+                        <select class="form-control custom-select2" id="location" name="vehicle[location]" required>
                             <option value=""></option>
                             @foreach ($locations as $location)
                             <option value="{{$location->id}}">{{$location->city_name}}</option>
@@ -100,26 +111,36 @@
 
 
                     <div class="form-group">
-                        <input type="text" onkeypress="return onlyNumberKey(event)" class="form-control" id="price" name="vehicle[price]" placeholder="Price" required>
+                        <input type="text" onkeypress="return onlyNumberKey(event)" class="form-control" id="price"
+                            name="vehicle[price]" placeholder="Price" required>
                     </div>
 
                     <div class="form-group last">
                         <div class="fileupload fileupload-new" data-provides="fileupload">
                             <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" class="img-thumbnail" alt="" />
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image"
+                                    class="img-thumbnail" alt="" />
                             </div>
                             <div class="fileupload-preview fileupload-exists thumbnail"></div>
                             <div>
                                 <span class="btn btn-sm btn-white btn-file">
-                                <span class="fileupload-new"><i class="fas fa-paperclip"></i> Select image</span>
-                                <span class="fileupload-exists"><i class="fas fa-undo"></i> Change</span>
-                                <input id="file" type="file" name="vehicle_file[]" class="default" multiple required/>
+                                    <span class="fileupload-new"><i class="fas fa-paperclip"></i> Select image</span>
+                                    <span class="fileupload-exists"><i class="fas fa-undo"></i> Change</span>
+                                    <input id="file" type="file" name="vehicle_file[]" class="default" multiple
+                                        required />
                                 </span>
-                                <a href="#" class="btn btn-sm btn-danger remove-fileupload fileupload-exists" data-dismiss="fileupload"><i class="fas fa-trash"></i> Remove</a>
+                                <a href="#" class="btn btn-sm btn-danger remove-fileupload fileupload-exists"
+                                    data-dismiss="fileupload"><i class="fas fa-trash"></i> Remove</a>
                             </div>
                         </div>
                         <span class="badge badge-danger">NOTE!</span> <span>You can upload maximum 5 images</span>
                     </div>
+
+                    <div class="form-group">
+                        <span class="badge badge-info">NOTE!</span> <span>Your car will be verified by the company once
+                            a customer wants verification</span>
+                    </div>
+
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Add Post</button>
@@ -169,8 +190,7 @@
 {{-- <script src="{{asset('backend/js/validation-init.js')}}"></script> --}}
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
 <script>
-
-	$( "select.custom-select2" ).select2( {
+    $( "select.custom-select2" ).select2( {
 		theme: "bootstrap",
 		placeholder: "Select a location",
 		maximumSelectionSize: 6,
@@ -182,7 +202,8 @@
     // $('select').select2({})
 
 </script>
-{{-- <script type="text/javascript" src="{{asset('backend/js/bootstrap-fileupload/bootstrap-fileupload.js')}}""></script> --}}
+{{-- <script type="text/javascript" src="{{asset('backend/js/bootstrap-fileupload/bootstrap-fileupload.js')}}"">
+</script> --}}
 <script>
     $(function() {
         // Multiple images preview in browser

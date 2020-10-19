@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserRegistered;
+use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
@@ -60,6 +61,8 @@ class FrontController extends Controller
         ]);
 
         $user->sendEmailVerificationNotification();
+
+        Mail::to($user->email)->send(new UserRegistered($user));
 
         UserRole::create([
             'user_id' => $user->id,

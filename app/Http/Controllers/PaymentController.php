@@ -247,7 +247,7 @@ class PaymentController extends Controller
                 'name' => $vehicle_book->user->name,
                 'email' => $vehicle_book->user->email,
                 'address' => $vehicle_book->user->address,
-                'seller_name' => $vehicle_book->vehicle->user->name,
+                'seller_name' => $vehicle_book->vehicle->user->name . " (" . $vehicle_book->vehicle->user->email . ")" . "(" . $vehicle_book->vehicle->user->address . ")",
                 'seller_contact_no' => $vehicle_book->vehicle->user->contact_no,
                 'vehicle_name' => $vehicle_book->vehicle->brand . ' - ' . $vehicle_book->vehicle->model,
                 'vehicle_url' => route('vehicle.show', ['id' => $vehicle_book->vehicle->id])

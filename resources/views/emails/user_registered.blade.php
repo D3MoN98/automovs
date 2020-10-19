@@ -1,13 +1,12 @@
 @component('mail::message')
-# Vehicle Booked
+# Welcome
 
-Hello,
+Hello {{$user->name}},
 
-Your order for verification has been placed. The car will be shown verified for 15 days. Please make your purchase
-within that time.
+Welcome to Automovs. Thanks for signing up with Automovs.
 
 @component('mail::button', ['url' => '/'])
-View Vehicle
+Visit Site
 @endcomponent
 
 Thank You,<br>

@@ -9,7 +9,7 @@
     <h1>INVOICE</h1>
     <div id="project">
         <div><span>Customer</span> {{$vehicle_purchase->user->name}}</div>
-        <div><span>ADDRESS</span> 796 Silver Harbour, TX 79273, US</div>
+        <div><span>ADDRESS</span> {{$vehicle_purchase->user->address}}</div>
         <div><span>Contact No</span> <a
                 href="tel:{{$vehicle_purchase->user->contact_no}}">{{$vehicle_purchase->user->contact_no}}</a></div>
         <div><span>EMAIL</span> <a
