@@ -25,6 +25,14 @@
                         @if ($vehicle->isPuchased())
                         <div class="cr cr-top cr-left">Sold Out</div>
                         @endif
+
+                        @auth
+                        @if(Auth::user()->hasVehicleBooked($vehicle->id) &&
+                        Auth::user()->isLastVehicleBookedExpired($vehicle->id))
+                        <div class="cr cr-top cr-left bg-primary"><i class="far fa-badge-check"></i> Verified</div>
+                        @endif
+                        @endauth
+
                         <a href="{{asset('storage/'.$image)}}" data-fancybox="gallery" href="big_1.jpg">
                             <img class="card-img-top single-img" src="{{asset('storage/'.$image)}}" alt="">
                         </a>
@@ -90,10 +98,10 @@
                     <form action="{{route('pay', ['for' => 'vehicle', 'type' => 'purchase', 'id' => $vehicle->id ])}}"
                         method="post">
                         @csrf
-                        <button type="button" class="btn btn-primary">Vehicle is verified</button>
-                        <button type="submit" class="btn btn-primary">Buy Now</button>
-                        <span class="badge badge-info">NOTE!</span> <span>Pay 2% of the cost of the car to the
-                            company</span>
+                        {{-- <button type="button" class="btn btn-primary">Vehicle is verified</button> --}}
+                        <button type="submit" class="btn btn-primary">Pay Now <i class="far fa-rupee-sign"></i> {{$vehicle->price * 2 / 100}} (2%)</button>
+                        <br><span class="badge badge-info">NOTE!</span> <span>Pay rest of  Rs. {{$vehicle->price - ($vehicle->price * 2 / 100)}} (98%) cost of the car to the
+                            seller directly</span>
                     </form>
 
                     @endif

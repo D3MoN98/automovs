@@ -261,7 +261,7 @@ class PaymentController extends Controller
             /**
              * For seller
              */
-            $result = Msg91::sms($vehicle_book->vehicle->user->contact_no, '5efc4eb3d6fc056e45680304', $variables);
+            // $result = Msg91::sms($vehicle_book->vehicle->user->contact_no, '5efc4eb3d6fc056e45680304', $variables);
 
             /**
              * For admin
@@ -279,6 +279,10 @@ class PaymentController extends Controller
     {
         try {
 
+            $original_price = (int) $vehicle_purchase->vehicle->price;
+            $calculated_price = (int) ($original_price * 2) / 100;
+            $due_price = (int) $original_price - $calculated_price;
+
             $variables = [
                 'name' => $vehicle_purchase->user->name,
                 'email' => $vehicle_purchase->user->email,
@@ -288,7 +292,7 @@ class PaymentController extends Controller
                 'seller_contact_no' => $vehicle_purchase->vehicle->user->contact_no,
                 'vehicle_name' => $vehicle_purchase->vehicle->brand . ' - ' . $vehicle_purchase->vehicle->model,
                 'vehicle_url' => route('vehicle.show', ['id' => $vehicle_purchase->vehicle->id]),
-                'price' => $vehicle_purchase->vehicle->price
+                'price' => "$calculated_price (Original price : $original_price) (Due : $due_price)",
             ];
 
             /**

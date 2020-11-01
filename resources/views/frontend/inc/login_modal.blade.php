@@ -39,7 +39,9 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary btn-submit">Login
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -51,6 +53,9 @@
             e.preventDefault();
             var _this = $(this);
             var form = _this.serialize();
+            var btn = _this.find('.btn-submit');
+            btn.attr('disabled', 'disabled');
+            btn.find('.spinner-border').removeClass('d-none');
 
             $.ajax({
                 url: _this.attr('action'),
@@ -62,12 +67,17 @@
                     _this.find('.alert-danger').addClass('d-none');
                     _this.find('.alert-success').removeClass('d-none');
                     _this.trigger("reset");
+                    btn.removeAttr('disabled');
+                    btn.find('.spinner-border').addClass('d-none');
+
 
                     setTimeout(() => {
                         location.reload();
                     }, 2000);
                 },
                 error:function(data){
+                    btn.removeAttr('disabled');
+                    btn.find('.spinner-border').addClass('d-none');
                     if (data.status === 422) {
                         _this.find('.form-text.text-danger').remove();
                         $.each(data.responseJSON.errors, function (i, error) {

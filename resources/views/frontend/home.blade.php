@@ -1,6 +1,7 @@
 @extends('frontend.layout.front')
 
 @section('content')
+
 <section class="banner home-banner">
     <div class="container-fluid">
         <div class="row">
@@ -12,7 +13,7 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    register to sell or buy a car now
+                                    Register to sell or buy a car now
                                 </p>
                                 <hr class="my-2">
                             </div>
@@ -24,19 +25,7 @@
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    register to sell or buy a car now
-                                </p>
-                                <hr class="my-2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/banner-01.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    get your service done now
+                                    Register to sell or buy a car now
                                 </p>
                                 <hr class="my-2">
                             </div>
@@ -44,17 +33,96 @@
                     </div>
 
                     <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/CAR SERVICES.v1.jpg')}}" alt="">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-wash-detailing.jpg')}}" alt="">
                         <div class="card-img-overlay">
                             <div class="jumbotron bg-default">
                                 <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
                                 <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car Services
+                                    Car wash and detailing
                                 </p>
                                 <hr class="my-2">
                             </div>
                         </div>
                     </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-sanitizing.jpg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Car interior sanitization
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-services.jpg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Car services
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-general-service.jpg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Car general services
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/corrosion-protectoin.png')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Underbody rust protection
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-denting-painting.jpeg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Car denting painting
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="card-img-top" src="{{asset('frontend/images/car-ac-service.jpg')}}" alt="">
+                        <div class="card-img-overlay">
+                            <div class="jumbotron bg-default">
+                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                    Car ac and gas charge
+                                </p>
+                                <hr class="my-2">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

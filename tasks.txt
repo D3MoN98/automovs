@@ -1,0 +1,40 @@
+New tasks
+
+1) 2% of the cost of the car needs to be paid to the company. That is not highlighted in the website. Please check - done
+2) after buying a car the SMS sent to buyer, seller & admin are showing wrong prices of the car. Please check that - done
+3) the company address & email id in the automovs invoice is still incorrect. Put the address as 139c/31, becharam Chatterjee road, behala, Kolkata-700034 - done
+4) after verifying a car no SMS will go to seller. But SMS is still going. Please check that - done
+5) in the automovs invoice a line is written as NOTICE. Please remove that - done
+
+
+
+
+Finished/Completed -
+
+
+1) after registering email is going to the customer from automovs but it is not showing confirmation. It is again asking to verify the mail. Please check that - Done
+
+2) 2% of the cost of the car needs to paid to the company. That is not highlighted in the website. - Done.
+ Include that in the website as well as in the SMS to company - done
+
+4) automovs invoice should consist of proper customer address Nd company address. Include the company address as contactautomovs@gmail. - Done
+
+5) after verifying a car no SMS will go to seller. Instead in the add vehicle option put a star mark
+at the bottom & write- your car will be verified by the company once a customer wants verification - Done
+
+6) remove the writing under add post - Done
+
+9) in the automovs invoice a line is written as NOTICE. Please remove that - Done
+
+10) the seller address & email id is missing in the SMS sent to company after car verification. Check that - Done
+
+3) after buying a car the SMS sent to buyer, seller & admin are all wrong. Need to check that, 2% - done
+
+
+
+Unfinished/Complicated/Bugs -
+
+
+(8) there is some problem with the home screen. Data is vanishing when I am scrolling down. Also the about us, company policy icons are not showing. Please check that)
+
+(7) in the add post option it's written that a customer can upload maximum of 5 images. But where is the option to add? Please check that)

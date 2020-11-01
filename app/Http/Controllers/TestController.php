@@ -24,7 +24,7 @@ class TestController extends Controller
 
             $result = Msg91::sms("916291839827", '5efc5019d6fc0527d9149104', $variables, 'AUTOMV');
 
-            // dd($result);
+            dd($result);
 
 
             // //Your authentication key
