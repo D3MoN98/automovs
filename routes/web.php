@@ -27,6 +27,7 @@ Route::get('vehicle/{id}', 'FrontController@vehicle_detail')->where('id', '[0-9]
 Route::get('vehicles/sort_by/{type}', 'FrontController@vehicles_sort_by')->name('vehicles.sort_by');
 Route::get('services/sort_by_service_type/{id}', 'FrontController@services_sort_by_service_type')->name('services.sort_by_service_type');
 Route::get('service/{id}', 'FrontController@service_detail')->where('id', '[0-9]+')->name('service.show');
+Route::get('service_type/{id}', 'FrontController@services_by_service_type')->name('services.service_type');
 Route::post('register_action', 'FrontController@register_action')->name('register_action');
 Route::post('login_action', 'FrontController@login_action')->name('login_action');
 Route::get('about', 'FrontController@about')->name('about');

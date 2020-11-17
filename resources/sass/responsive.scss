@@ -34,6 +34,18 @@ $color-four: #e84a5f;
                 .lead {
                     font-size: 1rem;
                 }
+
+                .card-img-overlay {
+                    p {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+                    span.badge {
+                        font-size: 12px;
+                    }
+                }
             }
         }
     }
@@ -62,7 +74,6 @@ $color-four: #e84a5f;
             .card-img-otr {
                 margin: 0.5rem 0.5rem 0 0.5rem;
                 height: 175px;
-
             }
 
             .card-body {
@@ -71,7 +82,7 @@ $color-four: #e84a5f;
         }
     }
 
-    .card-columns {
+    .car-columns {
         margin-top: 10px;
         padding: 0 25px;
     }
@@ -186,13 +197,17 @@ $color-four: #e84a5f;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+}

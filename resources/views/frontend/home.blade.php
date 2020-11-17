@@ -7,121 +7,178 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="card-slider wow fadeInRight" data-wow-delay="0.4s">
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Register to sell or buy a car now
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{route('register')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Register to sell or buy a car now
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            Automvs20 to get 20% off</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Register to sell or buy a car now
-                                </p>
-                                <hr class="my-2">
-                            </div>
-                        </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-wash-detailing.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car wash and detailing
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{route('services')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Register to sell or buy a car now
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            Automvs20 to get 20% off</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-sanitizing.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car interior sanitization
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{url('service_type/1')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-wash-detailing.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car wash and detailing
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-services.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car services
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{url('service_type/2')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-sanitizing.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car interior sanitization
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-general-service.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car general services
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{url('service_type/4')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-services.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car services
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/corrosion-protectoin.png')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Underbody rust protection
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{url('service_type/5')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-general-service.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car general services
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-denting-painting.jpeg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car denting painting
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{route('services')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/corrosion-protectoin.png')}}"
+                                alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Underbody rust protection
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="card">
-                        <img class="card-img-top" src="{{asset('frontend/images/car-ac-service.jpg')}}" alt="">
-                        <div class="card-img-overlay">
-                            <div class="jumbotron bg-default">
-                                <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                    Car ac and gas charge
-                                </p>
-                                <hr class="my-2">
+                    <a href="{{route('services')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-denting-painting.jpeg')}}"
+                                alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car denting painting
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="{{route('services')}}">
+                        <div class="card">
+                            <img class="card-img-top" src="{{asset('frontend/images/car-ac-service.jpg')}}" alt="">
+                            <div class="card-img-overlay">
+                                <div class="jumbotron bg-default">
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
+                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
+                                        Car ac and gas charge
+                                    </p>
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
+                                            at Rs. 1000</span>
+                                    </p>
+                                    <hr class="my-2">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
                 </div>
             </div>
@@ -161,10 +218,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="card-columns" id="lists">
-                @include('frontend.inc.car_card')
-            </div>
+        <div class="row car-column">
+            @include('frontend.inc.car_card')
         </div>
     </div>
 </section>

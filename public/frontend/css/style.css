@@ -140,8 +140,6 @@ a.link {
   padding-left: 0;
   padding-right: 0;
   background-color: transparent;
-  margin-bottom: 0;
-  padding: 2rem 2rem;
 }
 
 .banner .jumbotron .btn {
@@ -175,33 +173,47 @@ a.link {
   background-color: transparent;
 }
 
-.banner .card-slider .card::after {
-    content: "" !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(120deg, white, #fff5da);
-    opacity: .2;
-}
-
 .banner .card-slider .card img.card-img-top {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  animation: scale 20s linear infinite;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   height: 100%;
   -webkit-animation: scale 20s linear infinite;
-          animation: scale 20s linear infinite;
+  animation: scale 20s linear infinite;
 }
 
-.banner .card-slider .card .card-img-overlay{
-    z-index: 10;
+.banner .card-slider .card::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: linear-gradient(120deg, white, #fff5da) !important;
+  opacity: 0.2 !important;
 }
+
+.banner .card-slider .card .card-img-overlay {
+  z-index: 10;
+}
+
 .banner .card-slider .card .card-img-overlay h1,
 .banner .card-slider .card .card-img-overlay p {
-    color: #5c2626;
+  color: #5c2626;
+}
+
+.banner .card-slider .card .card-img-overlay p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.banner .card-slider .card .card-img-overlay span.badge {
+  font-size: 22px;
 }
 
 .home-banner .jumbotron {
@@ -275,6 +287,7 @@ a.link {
   background-color: #ffffffb5;
   position: relative;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .car-list .card:hover img {
@@ -470,6 +483,7 @@ footer .nav .nav-link {
   padding: 0;
   -moz-column-count: 2;
        column-count: 2;
+  max-width: 100%;
 }
 
 .single-details-section .attribute-otr .attribute-list li {
@@ -510,6 +524,10 @@ footer .nav .nav-link {
 
 .related-list-otr .slick-list {
   margin: 0 -5px;
+}
+
+.related-list-otr .col-md-4 {
+  all: inherit;
 }
 
 .cr {
@@ -680,7 +698,7 @@ footer .nav .nav-link {
   height: 100%;
   margin: 0 auto;
   color: #001028;
-  background: #FFFFFF;
+  background: #ffffff;
   font-size: 12px;
   font-family: "Ubuntu", sans-serif;
 }
@@ -692,7 +710,7 @@ footer .nav .nav-link {
 }
 
 .invoice a {
-  color: #5D6975;
+  color: #5d6975;
   text-decoration: underline;
 }
 
@@ -711,9 +729,9 @@ footer .nav .nav-link {
 }
 
 .invoice h1 {
-  border-top: 1px solid #5D6975;
-  border-bottom: 1px solid #5D6975;
-  color: #5D6975;
+  border-top: 1px solid #5d6975;
+  border-bottom: 1px solid #5d6975;
+  color: #5d6975;
   font-size: 2.4em;
   line-height: 1.4em;
   font-weight: normal;
@@ -726,7 +744,7 @@ footer .nav .nav-link {
 }
 
 .invoice #project span {
-  color: #5D6975;
+  color: #5d6975;
   text-align: right;
   width: 52px;
   margin-right: 10px;
@@ -751,7 +769,7 @@ footer .nav .nav-link {
 }
 
 .invoice table tr:nth-child(2n-1) td {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .invoice table th,
@@ -761,8 +779,8 @@ footer .nav .nav-link {
 
 .invoice table th {
   padding: 5px 20px;
-  color: #5D6975;
-  border-bottom: 1px solid #C1CED9;
+  color: #5d6975;
+  border-bottom: 1px solid #c1ced9;
   white-space: nowrap;
   font-weight: normal;
 }
@@ -789,21 +807,21 @@ footer .nav .nav-link {
 }
 
 .invoice table td.grand {
-  border-top: 1px solid #5D6975;
+  border-top: 1px solid #5d6975;
 }
 
 .invoice #notices .notice {
-  color: #5D6975;
+  color: #5d6975;
   font-size: 1.2em;
 }
 
 .invoice footer {
-  color: #5D6975;
+  color: #5d6975;
   width: 100%;
   height: 30px;
   position: absolute;
   bottom: 0;
-  border-top: 1px solid #C1CED9;
+  border-top: 1px solid #c1ced9;
   padding: 8px 0;
   text-align: center;
 }

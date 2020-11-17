@@ -4,8 +4,7 @@ $color-two: #5c2626;
 $color-three: #ff847c;
 $color-four: #e84a5f;
 
-$thetransition: all .5s cubic-bezier(1, .25, 0, .75) 0s;
-
+$thetransition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 
 // animations
 
@@ -28,9 +27,8 @@ $thetransition: all .5s cubic-bezier(1, .25, 0, .75) 0s;
 // animations
 
 * {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
 }
-
 
 textarea:hover,
 input:hover,
@@ -116,7 +114,6 @@ a.link {
 //     color: $color-one !important;
 // }
 
-
 .form-control {
     background: transparent;
     border: 1px solid $color-two;
@@ -133,13 +130,11 @@ a.link {
 ::-webkit-input-placeholder {
     /* Edge */
     color: $color-two !important;
-
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: $color-two !important;
-
 }
 
 ::placeholder {
@@ -147,11 +142,9 @@ a.link {
     letter-spacing: 1px;
 }
 
-
 .slick-track {
     margin: 0;
 }
-
 
 .header {
     .navbar {
@@ -218,16 +211,41 @@ a.link {
                 object-position: center;
                 height: 100%;
                 animation: scale 20s linear infinite;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+                height: 100%;
+                -webkit-animation: scale 20s linear infinite;
+                animation: scale 20s linear infinite;
             }
             &::after {
                 content: "" !important;
-                position: absolute!important;
-                top: 0!important;
-                left: 0!important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
                 width: 100% !important;
                 height: 100% !important;
-                background-image: linear-gradient(120deg, white, #fff5da) !important;
-                opacity: .2 !important;
+                background-image: linear-gradient(
+                    120deg,
+                    white,
+                    #fff5da
+                ) !important;
+                opacity: 0.2 !important;
+            }
+            .card-img-overlay {
+                z-index: 10;
+                h1,
+                p {
+                    color: $color-two;
+                }
+                p {
+                    font-size: 20px;
+                    text-transform: uppercase;
+                }
+                span.badge {
+                    font-size: 22px;
+                }
             }
         }
     }
@@ -262,8 +280,6 @@ a.link {
                     display: block;
                     padding: 10px;
                     position: relative;
-
-
 
                     &:before {
                         content: "";
@@ -306,16 +322,15 @@ a.link {
     .card-deck {
         margin-top: 20px;
     }
-
     .card {
         border: none;
         border-radius: 10px;
         background-color: #ffffffb5;
         position: relative;
         overflow: hidden;
+        margin-bottom: 30px;
 
         &:hover {
-
             // box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
             img {
                 transform: scale(1.1);
@@ -381,7 +396,8 @@ a.link {
         }
     }
 
-    .pagination {}
+    .pagination {
+    }
 }
 
 footer {
@@ -461,7 +477,7 @@ footer {
         }
     }
 
-    .breadcrumb-item+.breadcrumb-item::before {
+    .breadcrumb-item + .breadcrumb-item::before {
         color: $color-two;
     }
 
@@ -520,7 +536,7 @@ footer {
             list-style: none;
             padding: 0;
             column-count: 2;
-
+            max-width: 100%;
             li {
                 margin-bottom: 10px;
                 display: flex;
@@ -561,8 +577,11 @@ footer {
     .slick-list {
         margin: 0 -5px;
     }
-}
 
+    .col-md-4 {
+        all: inherit;
+    }
+}
 
 .cr {
     width: 200px;
@@ -664,8 +683,6 @@ footer {
     strong {
         font-weight: 600;
     }
-
-
 }
 
 .profile {
@@ -689,7 +706,6 @@ footer {
                 background-color: $color-two !important;
                 color: $color-one;
             }
-
         }
     }
 
@@ -711,7 +727,6 @@ footer {
                     height: 100%;
                     object-fit: cover;
                     transition: transform 1s;
-
                 }
             }
 
@@ -727,7 +742,6 @@ footer {
                 &:hover {
                     opacity: 80%;
                 }
-
             }
 
             .list-right {
@@ -750,10 +764,9 @@ footer {
     height: 100%;
     margin: 0 auto;
     color: #001028;
-    background: #FFFFFF;
+    background: #ffffff;
     font-size: 12px;
-    font-family: 'Ubuntu',
-        sans-serif;
+    font-family: "Ubuntu", sans-serif;
 
     .clearfix:after {
         content: "";
@@ -762,7 +775,7 @@ footer {
     }
 
     a {
-        color: #5D6975;
+        color: #5d6975;
         text-decoration: underline;
     }
 
@@ -781,9 +794,9 @@ footer {
     }
 
     h1 {
-        border-top: 1px solid #5D6975;
-        border-bottom: 1px solid #5D6975;
-        color: #5D6975;
+        border-top: 1px solid #5d6975;
+        border-bottom: 1px solid #5d6975;
+        color: #5d6975;
         font-size: 2.4em;
         line-height: 1.4em;
         font-weight: normal;
@@ -797,7 +810,7 @@ footer {
     }
 
     #project span {
-        color: #5D6975;
+        color: #5d6975;
         text-align: right;
         width: 52px;
         margin-right: 10px;
@@ -823,7 +836,7 @@ footer {
     }
 
     table tr:nth-child(2n-1) td {
-        background: #F5F5F5;
+        background: #f5f5f5;
     }
 
     table th,
@@ -833,8 +846,8 @@ footer {
 
     table th {
         padding: 5px 20px;
-        color: #5D6975;
-        border-bottom: 1px solid #C1CED9;
+        color: #5d6975;
+        border-bottom: 1px solid #c1ced9;
         white-space: nowrap;
         font-weight: normal;
     }
@@ -861,22 +874,21 @@ footer {
     }
 
     table td.grand {
-        border-top: 1px solid #5D6975;
-        ;
+        border-top: 1px solid #5d6975;
     }
 
     #notices .notice {
-        color: #5D6975;
+        color: #5d6975;
         font-size: 1.2em;
     }
 
     footer {
-        color: #5D6975;
+        color: #5d6975;
         width: 100%;
         height: 30px;
         position: absolute;
         bottom: 0;
-        border-top: 1px solid #C1CED9;
+        border-top: 1px solid #c1ced9;
         padding: 8px 0;
         text-align: center;
     }

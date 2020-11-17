@@ -141,6 +141,18 @@ class FrontController extends Controller
         ]);
     }
 
+    public function services_by_service_type($id)
+    {
+
+        $service_type = ServiceType::find($id);
+        $services = ServiceType::find($id)->services()->paginate(9);
+
+        return view('frontend.services_by_service_type')->with([
+            'services' => $services,
+            'service_type' => $service_type,
+        ]);
+    }
+
 
     public function vehicle_detail($id)
     {

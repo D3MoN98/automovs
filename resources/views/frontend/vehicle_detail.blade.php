@@ -99,8 +99,10 @@
                         method="post">
                         @csrf
                         {{-- <button type="button" class="btn btn-primary">Vehicle is verified</button> --}}
-                        <button type="submit" class="btn btn-primary">Pay Now <i class="far fa-rupee-sign"></i> {{$vehicle->price * 2 / 100}} (2%)</button>
-                        <br><span class="badge badge-info">NOTE!</span> <span>Pay rest of  Rs. {{$vehicle->price - ($vehicle->price * 2 / 100)}} (98%) cost of the car to the
+                        <button type="submit" class="btn btn-primary">Pay Now <i class="far fa-rupee-sign"></i>
+                            {{$vehicle->price * 2 / 100}} (2%)</button>
+                        <br><span class="badge badge-info">NOTE!</span> <span>Pay rest of Rs.
+                            {{$vehicle->price - ($vehicle->price * 2 / 100)}} (98%) cost of the car to the
                             seller directly</span>
                     </form>
 
@@ -164,7 +166,7 @@
             slidesToShow: 3,
             slidesToScroll: 1,
             dots: false,
-            arrows: true,
+            arrows: false,
             centerMode: false,
             focusOnSelect: true,
             responsive: [

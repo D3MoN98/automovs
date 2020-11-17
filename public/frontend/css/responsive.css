@@ -27,6 +27,17 @@
     font-size: 1rem;
   }
 
+  .banner .card-slider .card .card-img-overlay p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .banner .card-slider .card .card-img-overlay span.badge {
+    font-size: 12px;
+  }
+
   .car-list {
     margin-top: 1rem;
   }
@@ -53,7 +64,7 @@
     padding: 0.5rem;
   }
 
-  .card-columns {
+  .car-columns {
     margin-top: 10px;
     padding: 0 25px;
   }
