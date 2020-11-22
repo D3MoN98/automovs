@@ -12,14 +12,8 @@
                             <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Register to sell or buy a car now
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
-                                            Automvs20 to get 20% off</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Register to sell or buy a
+                                        car now</h1>
                                     <hr class="my-2">
                                 </div>
                             </div>
@@ -28,18 +22,20 @@
 
                     <a href="{{route('services')}}">
                         <div class="card">
-                            <img class="card-img-top" src="{{asset('frontend/images/banner-02.jpg')}}" alt="">
+                            <img class="card-img-top" src="{{asset('frontend/images/banner-01.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Register to sell or buy a car now
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
-                                            Automvs20 to get 20% off</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Get Your Car Services
+                                        Done Now</h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use
+                                            Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -50,34 +46,36 @@
                             <img class="card-img-top" src="{{asset('frontend/images/car-wash-detailing.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car wash and detailing
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car wash and detailing
+                                    </h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="{{url('service_type/2')}}">
+                    <a href="{{url('service_type/3')}}">
                         <div class="card">
                             <img class="card-img-top" src="{{asset('frontend/images/car-sanitizing.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car interior sanitization
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car interior sanitization
+                                    </h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -88,15 +86,15 @@
                             <img class="card-img-top" src="{{asset('frontend/images/car-services.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car services
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car services</h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -107,74 +105,77 @@
                             <img class="card-img-top" src="{{asset('frontend/images/car-general-service.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car general services
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car general services</h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="{{route('services')}}">
+                    <a href="{{url('service_type/11/single')}}">
                         <div class="card">
                             <img class="card-img-top" src="{{asset('frontend/images/corrosion-protectoin.png')}}"
                                 alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Underbody rust protection
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Underbody rust protection
+                                    </h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="{{route('services')}}">
+                    <a href="{{url('service_type/10/single')}}">
                         <div class="card">
                             <img class="card-img-top" src="{{asset('frontend/images/car-denting-painting.jpeg')}}"
                                 alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car denting painting
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car denting painting</h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="{{route('services')}}">
+                    <a href="{{url('service_type/12/single')}}">
                         <div class="card">
                             <img class="card-img-top" src="{{asset('frontend/images/car-ac-service.jpg')}}" alt="">
                             <div class="card-img-overlay">
                                 <div class="jumbotron bg-default">
-                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Automovs</h1>
-                                    <p class="lead wow fadeInLeft" data-wow-delay="0.5s">
-                                        Car ac and gas charge
-                                    </p>
-                                    <p>
-                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Starts
-                                            at Rs. 1000</span>
-                                    </p>
+                                    <h1 class="display-3 wow fadeInLeft" data-wow-delay="0.2s">Car ac services and gas
+                                        charge
+                                    </h1>
                                     <hr class="my-2">
+                                    <p>
+                                        <span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Flat 20%
+                                            off</span>
+                                    </p>
+                                    <p><span class="badge badge-primary wow fadeInRight" data-wow-delay="0.5s">Use Code
+                                            - AUTOMOVS20</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +219,7 @@
                 </div>
             </div>
         </div>
-        <div class="row car-column">
+        <div class="row car-column" id="lists">
             @include('frontend.inc.car_card')
         </div>
     </div>

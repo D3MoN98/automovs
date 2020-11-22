@@ -60,16 +60,23 @@ class FrontController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $user->sendEmailVerificationNotification();
-
-        Mail::to($user->email)->send(new UserRegistered($user));
 
         UserRole::create([
             'user_id' => $user->id,
             'role_id' => 2
         ]);
 
-        return response()->json(['success' => 'Register Successfull']);
+        $result = ['success' => 'Register Successfull'];
+
+        try {
+            $user->sendEmailVerificationNotification();
+            Mail::to($user->email)->send(new UserRegistered($user));
+        } catch (Exception $e) {
+            array_push($result, ['error' => $e->getMessage()]);
+        }
+
+
+        return response()->json($result);
     }
 
     public function login_action(Request $request)
@@ -141,11 +148,16 @@ class FrontController extends Controller
         ]);
     }
 
-    public function services_by_service_type($id)
+    public function services_by_service_type($id, $single)
     {
 
-        $service_type = ServiceType::find($id);
-        $services = ServiceType::find($id)->services()->paginate(9);
+        if ($single == 'single') {
+            $services = Service::whereIn('id', [$id])->paginate(9);
+            $service_type = Service::find($id);
+        } else {
+            $service_type = ServiceType::findOrFail($id);
+            $services = ServiceType::find($id)->services()->paginate(9);
+        }
 
         return view('frontend.services_by_service_type')->with([
             'services' => $services,

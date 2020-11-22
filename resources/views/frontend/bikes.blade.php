@@ -15,13 +15,11 @@
 
 <section class="car-list mt-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row car-column">
+            <div>
                 @if (count($vehicles) > 0)
-                <div class="card-columns">
-                    @include('frontend.inc.car_card')
-                </div>
-                <div>
+                @include('frontend.inc.car_card')
+                <div class="col-md-12">
                     {{ $vehicles->links() }}
                 </div>
                 @else
